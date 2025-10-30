@@ -46,9 +46,16 @@
         }
 
         html {
-            scroll-behavior: smooth;
-            scroll-snap-type: y proximity;
             overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Smooth scroll only on desktop */
+        @media (min-width: 1024px) {
+            html {
+                scroll-behavior: smooth;
+                scroll-snap-type: y proximity;
+            }
         }
 
         body {
@@ -86,12 +93,18 @@
         /* Section base */
         section {
             min-height: 100vh;
-            scroll-snap-align: start;
             position: relative;
             padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        /* Scroll snap only on desktop */
+        @media (min-width: 1024px) {
+            section {
+                scroll-snap-align: start;
+            }
         }
 
         /* ================================
@@ -361,16 +374,25 @@
             left: 50%;
             width: 85%;
             max-width: 320px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
+            background: rgba(26, 26, 26, 1);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             padding: 3rem 2rem;
             text-align: center;
-            transform: translateX(-50%) scale(0.9);
-            opacity: 0.5;
+            transform: translateX(-50%) scale(0.85);
             transition: all 400ms var(--ease-out-expo);
             cursor: grab;
+            z-index: 1;
+            filter: brightness(0.5);
+        }
+
+        /* Backdrop blur only on desktop for better mobile performance */
+        @media (min-width: 768px) {
+            .story-card {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
         }
 
         .story-card:active {
@@ -379,20 +401,20 @@
 
         .story-card.active {
             transform: translateX(-50%) scale(1);
-            opacity: 1;
+            filter: brightness(1);
             z-index: 10;
             box-shadow: 0 30px 80px rgba(255, 107, 53, 0.3);
         }
 
         .story-card.next {
-            transform: translateX(20%) scale(0.85);
-            opacity: 0.3;
+            transform: translateX(20%) scale(0.8);
+            filter: brightness(0.4);
             z-index: 1;
         }
 
         .story-card.prev {
-            transform: translateX(-120%) scale(0.85);
-            opacity: 0.3;
+            transform: translateX(-120%) scale(0.8);
+            filter: brightness(0.4);
             z-index: 1;
         }
 
@@ -451,7 +473,6 @@
         .journey-mobile {
             background: linear-gradient(180deg, var(--black-soft) 0%, var(--gray-dark) 100%);
             padding: 4rem 1.5rem;
-            scroll-snap-align: start;
             min-height: 100vh;
         }
 
@@ -653,14 +674,30 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
+            background: rgba(26, 26, 26, 1);
             border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .bike-card-back {
             transform: rotateY(180deg);
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(0, 217, 255, 0.2));
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.4), rgba(0, 217, 255, 0.4)),
+                        rgba(26, 26, 26, 1);
+        }
+
+        /* Backdrop blur only on desktop for better mobile performance */
+        @media (min-width: 768px) {
+            .bike-card-front,
+            .bike-card-back {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
+
+            .bike-card-back {
+                background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(0, 217, 255, 0.2));
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
         }
 
         .bike-rank {
@@ -871,6 +908,7 @@
             transform: translateY(100%);
             animation: slideUp 600ms var(--ease-out-expo) 1500ms forwards;
             box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+            transition: padding 300ms var(--ease-out-expo);
         }
 
         .cta-btn-primary {
@@ -889,13 +927,73 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            height: auto;
             min-height: 56px;
-            transition: all 200ms var(--ease-out-expo);
+            max-height: 100px;
+            transition: all 300ms var(--ease-out-expo),
+                        padding 300ms var(--ease-out-expo),
+                        margin 300ms var(--ease-out-expo),
+                        max-height 300ms var(--ease-out-expo);
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            opacity: 1;
+            margin-bottom: 1rem;
         }
 
         .cta-btn-primary:active {
             transform: scale(0.97);
+        }
+
+        /* Shrink footer height on scroll (mobile only) */
+        @media (max-width: 767px) {
+            .sticky-cta.scrolled .cta-btn-primary {
+                min-height: 0;
+                max-height: 0;
+                padding: 0;
+                margin-bottom: 0;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .sticky-cta.scrolled .social-bubbles {
+                margin-top: 0;
+                gap: 0.5rem;
+            }
+
+            .sticky-cta.scrolled .social-bubble {
+                width: 36px;
+                height: 36px;
+            }
+
+            .sticky-cta.scrolled .social-bubble svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .sticky-cta.scrolled .author-credit {
+                font-size: 0.7rem;
+                padding-top: 0.3rem;
+                gap: 0.3rem;
+            }
+
+            .sticky-cta.scrolled .author-heart {
+                width: 12px;
+                height: 12px;
+            }
+
+            .sticky-cta.scrolled .author-link {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.7rem;
+            }
+
+            .sticky-cta.scrolled .author-link i {
+                width: 12px;
+                height: 12px;
+            }
+
+            .sticky-cta.scrolled {
+                padding: 0.3rem 1rem;
+                padding-bottom: calc(0.3rem + env(safe-area-inset-bottom, 0px));
+            }
         }
 
         .cta-btn-primary svg {
@@ -918,6 +1016,7 @@
             justify-content: center;
             gap: 1rem;
             margin-top: 1rem;
+            transition: all 300ms var(--ease-out-expo);
         }
 
         .social-bubble {
@@ -929,7 +1028,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 200ms var(--ease-out-back);
+            transition: all 300ms var(--ease-out-back);
         }
 
         .social-bubble:active {
@@ -941,6 +1040,7 @@
             width: 20px;
             height: 20px;
             stroke: var(--white-pure);
+            transition: all 300ms var(--ease-out-expo);
         }
 
         /* Author Credit */
@@ -952,6 +1052,7 @@
             padding-top: 2rem;
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.5);
+            transition: all 300ms var(--ease-out-expo);
         }
 
         .author-label {
@@ -964,6 +1065,7 @@
             stroke: var(--orange-vibrant);
             fill: var(--orange-vibrant);
             animation: heartBeat 1.5s ease-in-out infinite;
+            transition: all 300ms var(--ease-out-expo);
         }
 
         .author-link {
@@ -987,6 +1089,7 @@
         .author-link i {
             width: 16px;
             height: 16px;
+            transition: all 300ms var(--ease-out-expo);
         }
 
         /* ================================
@@ -2076,16 +2179,29 @@
         });
 
         // ================================
-        // PARALLAX HERO
+        // PARALLAX HERO - Optimized for mobile
         // ================================
         const heroBg = document.getElementById('hero-bg');
+        let ticking = false;
+
+        function updateParallax(scrolled) {
+            if (scrolled < window.innerHeight) {
+                // Parallax effect: background moves slower than scroll
+                heroBg.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`;
+            }
+            ticking = false;
+        }
 
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            if (scrolled < window.innerHeight) {
-                heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateParallax(scrolled);
+                });
+                ticking = true;
             }
-        });
+        }, { passive: true });
 
         // ================================
         // SCROLL INDICATOR
@@ -2241,6 +2357,48 @@
             carouselDots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
             });
+        });
+
+        // ================================
+        // FOOTER CTA HIDE ON SCROLL (Mobile Only)
+        // ================================
+        const stickyCta = document.querySelector('.sticky-cta');
+        let lastScrollY = window.pageYOffset;
+        let ctaTicking = false;
+
+        function updateFooterCta() {
+            const currentScrollY = window.pageYOffset;
+
+            // Only apply on mobile (< 768px)
+            if (window.innerWidth < 768) {
+                // If scrolled down more than 100px, hide CTA
+                if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+                    stickyCta.classList.add('scrolled');
+                } else if (currentScrollY < lastScrollY || currentScrollY < 100) {
+                    // Show CTA when scrolling up or near top
+                    stickyCta.classList.remove('scrolled');
+                }
+            } else {
+                // Remove class on larger screens
+                stickyCta.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
+            ctaTicking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ctaTicking) {
+                window.requestAnimationFrame(updateFooterCta);
+                ctaTicking = true;
+            }
+        }, { passive: true });
+
+        // Also check on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                stickyCta.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
