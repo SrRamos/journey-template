@@ -2,1220 +2,1018 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luh Pérez | Motociclista • Aventurera • Creadora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Luh Pérez | El Viaje de una Motociclista</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Luh Pérez - Motociclista profesional de Colombia. Creadora de contenido sobre aventuras en moto, dirt bikes y empoderamiento femenino. 208K+ seguidores comprometidos.">
-    <meta name="keywords" content="Luh Pérez, motociclista, Colombia, dirt bike, aventura, creadora de contenido, influencer, motorcycles">
-    <meta name="author" content="Luh Pérez">
+    <meta name="description" content="El viaje de Luh Pérez - Motociclista, aventurera y creadora de contenido. Descubre mi historia sobre ruedas.">
+    <meta name="theme-color" content="#FF6B35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Luh Pérez | Motociclista • Aventurera • Creadora">
-    <meta property="og:description" content="Motociclista profesional de Colombia. Aventuras en moto y empoderamiento femenino.">
-    <meta property="og:url" content="https://luhperez.com">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Luh Pérez | Motociclista • Aventurera • Creadora">
-    <meta name="twitter:description" content="Motociclista profesional de Colombia. Aventuras en moto y empoderamiento femenino.">
-
-    <!-- Performance Optimization -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         :root {
-            /* Modern Minimalist Palette */
-            --primary-black: #000000;
-            --off-white: #fafafa;
-            --pure-white: #ffffff;
-            --light-gray: #e5e5e5;
-            --medium-gray: #999999;
-            --dark-gray: #1a1a1a;
-            --text-primary: #0a0a0a;
-            --text-secondary: #666666;
+            /* Adventure Colors */
+            --orange-vibrant: #FF6B35;
+            --orange-dark: #E74C3C;
+            --cyan-electric: #00D9FF;
+            --blue-sky: #4A90E2;
 
-            /* New Accent Colors for Sponsor-Focused Design */
-            --accent-primary: #FF6B35;    /* Energetic orange (motorcycle vibes) */
-            --accent-secondary: #00D9FF;  /* Electric cyan (adventure/tech) */
+            /* Neutrals */
+            --black-pure: #000000;
+            --black-soft: #0a0a0a;
+            --gray-dark: #1a1a1a;
+            --gray-medium: #666666;
+            --white-pure: #ffffff;
+            --white-off: #fafafa;
 
-            /* Data Visualization Colors */
-            --success-green: #00C853;
-            --warning-amber: #FFB300;
+            /* Premium Easing Curves */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+        }
 
-            /* Glassmorphism Effects */
-            --glass-white: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --glass-dark: rgba(0, 0, 0, 0.1);
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y proximity;
+            overscroll-behavior: none;
         }
 
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--off-white);
-            color: var(--text-primary);
+            background-color: var(--black-pure);
+            color: var(--white-pure);
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Typography - Headlines use Poppins */
-        h1, h2, h3, h4, h5, h6, .logo, .section-title, .card-title {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Navigation */
-        nav {
+        /* Scroll Progress Bar */
+        .scroll-progress {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 9999;
         }
 
-        nav.scrolled {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--orange-vibrant), var(--cyan-electric));
+            width: 0%;
+            transition: width 0.1s ease-out;
         }
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--primary-black);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: -0.2px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-black);
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: var(--primary-black);
-            transition: all 0.3s ease;
-            display: block;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* Mobile Menu Overlay */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 280px;
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            display: flex;
-            flex-direction: column;
-            padding: 100px 40px 40px;
-        }
-
-        .mobile-menu.active {
-            right: 0;
-        }
-
-        .mobile-menu a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid var(--light-gray);
-            transition: all 0.3s ease;
-            letter-spacing: -0.5px;
-        }
-
-        .mobile-menu a:hover {
-            color: var(--accent-primary);
-            padding-left: 10px;
-        }
-
-        /* Touch Optimization */
-        @media (hover: none) and (pointer: coarse) {
-            /* Remove hover effects on touch devices */
-            .dashboard-stat:hover {
-                transform: none;
-                padding-left: 0;
-            }
-
-            /* Optimize touch targets */
-            .btn {
-                min-height: 48px;
-                touch-action: manipulation;
-            }
-
-            .social-link {
-                width: 70px;
-                height: 70px;
-                font-size: 2rem;
-                touch-action: manipulation;
-            }
-
-            /* Active states for touch */
-            .btn:active {
-                transform: scale(0.95);
-            }
-
-            .social-link:active {
-                transform: scale(0.9);
-            }
-
-            .dashboard-stat:active {
-                background: rgba(255, 255, 255, 0.05);
-            }
-        }
-
-        /* Profile Picture Section - Mobile First */
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
-        }
-
-        @media (min-width: 769px) {
-            .profile-section {
-                flex-direction: row;
-                text-align: left;
-            }
-        }
-
-        .profile-picture-container {
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .profile-picture {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-                        0 0 0 12px rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (min-width: 769px) {
-            .profile-picture {
-                width: 180px;
-                height: 180px;
-            }
-        }
-
-        .profile-picture:hover {
-            transform: scale(1.05);
-            border-color: var(--accent-primary);
-            box-shadow: 0 12px 48px rgba(255, 107, 53, 0.4),
-                        0 0 0 12px rgba(255, 107, 53, 0.2);
-        }
-
-        /* Animated ring around profile picture */
-        .profile-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 160px;
-            height: 160px;
-            border: 2px solid transparent;
-            border-radius: 50%;
-            border-top-color: var(--accent-primary);
-            border-right-color: var(--accent-secondary);
-            animation: spin 3s linear infinite;
-            z-index: 1;
-        }
-
-        @media (min-width: 769px) {
-            .profile-ring {
-                width: 200px;
-                height: 200px;
-            }
-        }
-
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .profile-badges {
-            display: none; /* Hide badges on mobile */
-        }
-
-        @media (min-width: 769px) {
-            .profile-badges {
-                display: flex;
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-        }
-
-        .profile-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.7rem 1.2rem;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-        }
-
-        .profile-badge:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateX(5px);
-        }
-
-        .profile-badge-icon {
-            font-size: 1.2rem;
-        }
-
-        /* Hero Section - Mobile First */
-        .hero {
+        /* Section base */
+        section {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
+            scroll-snap-align: start;
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-                        url('https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/500632301_742633224950250_8697375964493088075_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=EpSx9GEC4QUQ7kNvwGq9xoA&_nc_oc=Adn3T3k3TvXf4TE0qaPN3TezGnOyfl1Fo9emUS6WmzZeikhsZQodqHurf7H0kgqkdp0&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=jBx3ZGaZHFIgRCcr_saFTg&oh=00_Afe-rxSkskceCpaVAPzHhNjL-1evFOfZTnf5E1RFO3bEKA&oe=69089168') center/cover no-repeat fixed;
-            padding: 6rem 2rem 3rem;
-            color: var(--pure-white);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        @media (min-width: 769px) {
-            .hero {
-                padding: 8rem 3rem 4rem;
-            }
+        /* ================================
+           HERO SECTION - The Hook
+        ================================ */
+        .hero-mobile {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
         }
 
-        .hero::before {
-            content: '';
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
-            z-index: 1;
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            align-items: center;
-            z-index: 2;
-            position: relative;
-        }
-
-        @media (min-width: 769px) {
-            .hero-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 6rem;
-            }
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                        url('https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/500632301_742633224950250_8697375964493088075_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=EpSx9GEC4QUQ7kNvwGq9xoA&_nc_oc=Adn3T3k3TvXf4TE0qaPN3TezGnOyfl1Fo9emUS6WmzZeikhsZQodqHurf7H0kgqkdp0&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=jBx3ZGaZHFIgRCcr_saFTg&oh=00_Afe-rxSkskceCpaVAPzHhNjL-1evFOfZTnf5E1RFO3bEKA&oe=69089168') center/cover no-repeat;
+            will-change: transform;
         }
 
         .hero-content {
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        @media (min-width: 769px) {
-            .hero-label {
-                font-size: 0.85rem;
-                margin-bottom: 1.5rem;
-                text-align: left;
-            }
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 0.8rem;
-            letter-spacing: -2px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
-            color: rgba(255, 255, 255, 0.9);
-            text-align: center;
-        }
-
-        @media (min-width: 769px) {
-            .hero h1 {
-                font-size: clamp(3rem, 7vw, 6rem);
-                letter-spacing: -3px;
-                margin-bottom: 1.5rem;
-                text-align: left;
-            }
-
-            .hero h2 {
-                font-size: clamp(1.8rem, 4vw, 3rem);
-                font-weight: 300;
-                letter-spacing: -1px;
-                margin-bottom: 2rem;
-                text-align: left;
-            }
-        }
-
-        .hero-description {
-            display: none; /* Hide long description on mobile */
-        }
-
-        .hero-description-short {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 400;
-            text-align: center;
-        }
-
-        @media (min-width: 769px) {
-            .hero-description {
-                display: block;
-                font-size: 1.1rem;
-                line-height: 1.8;
-                margin-bottom: 3rem;
-                max-width: 600px;
-            }
-
-            .hero-description-short {
-                display: none;
-            }
-        }
-
-        .hero-stats {
-            display: none; /* Hide on mobile, replaced with compact version */
-        }
-
-        @media (min-width: 769px) {
-            .hero-stats {
-                display: flex;
-                gap: 4rem;
-                margin-bottom: 3rem;
-            }
-        }
-
-        .stat-item {
-            border-left: 2px solid rgba(255, 255, 255, 0.3);
-            padding-left: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            letter-spacing: -2px;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-            margin-top: 2rem;
-        }
-
-        @media (min-width: 769px) {
-            .cta-buttons {
-                flex-direction: row;
-                align-items: flex-start;
-                margin-top: 0;
-            }
-        }
-
-        .btn {
-            padding: 1.2rem 2.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: 'DM Sans', sans-serif;
-            border-radius: 8px;
-            display: inline-block;
-            text-align: center;
-            min-width: 200px;
-            width: 100%;
-            max-width: 300px;
-        }
-
-        @media (min-width: 769px) {
-            .btn {
-                padding: 1rem 2rem;
-                font-size: 0.95rem;
-                letter-spacing: -0.2px;
-                border-radius: 0;
-                min-width: auto;
-                width: auto;
-                max-width: none;
-            }
-        }
-
-        .btn-primary {
-            background: var(--pure-white);
-            color: var(--primary-black);
             position: relative;
-            overflow: hidden;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            padding-bottom: calc(200px + env(safe-area-inset-bottom, 0px));
         }
 
-        .btn-primary::before {
-            content: '';
+        .profile-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            animation: fadeInScale 800ms var(--ease-out-back) 300ms backwards;
+        }
+
+        .profile-ring {
             position: absolute;
-            top: 0;
-            left: -100%;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 3px solid transparent;
+            border-radius: 50%;
+            border-top-color: var(--orange-vibrant);
+            border-right-color: var(--cyan-electric);
+            animation: spin 3s linear infinite;
+        }
+
+        .profile-img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.3), transparent);
-            transition: left 0.5s ease;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.4);
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-primary);
-            color: var(--pure-white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--pure-white);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--pure-white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-        }
-
-        /* Mobile-First: Compact Hero Stats */
-        .hero-stat-compact {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            animation: fadeInUp 1s ease 0.4s backwards;
-        }
-
-        .hero-stat-number {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 0.5rem;
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 0.9;
             letter-spacing: -3px;
-            background: linear-gradient(135deg, var(--pure-white), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-stat-label {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
         }
 
-        /* Hero Stats Dashboard - Hidden on Mobile, Shown on Desktop */
-        .hero-stats-dashboard {
-            position: relative;
-            animation: fadeInUp 1s ease 0.2s backwards;
-            display: none; /* Hidden on mobile by default */
+        .hero-title .word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: wordSlideIn 600ms var(--ease-out-expo) forwards;
         }
 
-        @media (min-width: 769px) {
-            .hero-stats-dashboard {
-                display: block;
-            }
-            .hero-stat-compact {
-                display: none;
-            }
-        }
+        .hero-title .word:nth-child(1) { animation-delay: 500ms; }
+        .hero-title .word:nth-child(2) { animation-delay: 650ms; }
 
-        /* ===== NEW 2025 METRICS DASHBOARD ===== */
-        .stats-card {
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        /* Header Section */
-        .stats-card-header {
-            margin-bottom: 0.5rem;
-        }
-
-        .stats-card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #FFFFFF, var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stats-card-subtitle {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
+        .hero-subtitle {
+            font-size: 1.1rem;
             font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 800ms var(--ease-out-expo) 800ms backwards;
         }
 
-        /* Modern Metric Cards Grid */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .metric-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 1.5rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .metric-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .metric-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .metric-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .metric-value {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            letter-spacing: -2px;
-            font-family: 'Poppins', sans-serif;
-            color: var(--pure-white);
-        }
-
-        .metric-label {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        /* Progress Circle */
-        .progress-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 1.5rem;
+        .hero-stats-compact {
             display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
-        .progress-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateX(5px);
-        }
-
-        .progress-ring {
+        .stat-ring-container {
             position: relative;
-            width: 70px;
-            height: 70px;
-            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: popIn 600ms var(--ease-out-back) forwards;
+            transition: all 300ms var(--ease-out-expo);
         }
 
-        .progress-ring svg {
+        .stat-ring-container:nth-child(1) { animation-delay: 1000ms; }
+        .stat-ring-container:nth-child(2) { animation-delay: 1150ms; }
+        .stat-ring-container:nth-child(3) { animation-delay: 1300ms; }
+
+        .stat-ring-container:active {
+            transform: scale(0.95);
+        }
+
+        .stat-circle-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .stat-circle-svg {
             transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
         }
 
-        .progress-ring-circle {
-            transition: stroke-dashoffset 1s ease;
-        }
-
-        .progress-ring-bg {
+        .stat-circle-bg {
             fill: none;
             stroke: rgba(255, 255, 255, 0.1);
             stroke-width: 6;
         }
 
-        .progress-ring-fill {
+        .stat-circle-progress {
             fill: none;
-            stroke: url(#gradient);
+            stroke: url(#gradient-orange);
             stroke-width: 6;
             stroke-linecap: round;
-            stroke-dasharray: 204;
-            stroke-dashoffset: 0;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            transition: stroke-dashoffset 1.5s var(--ease-out-expo);
         }
 
-        .progress-content {
-            flex: 1;
+        .stat-ring-container.visible .stat-circle-progress {
+            animation: drawCircle 1.5s var(--ease-out-expo) forwards;
         }
 
-        .progress-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 0.3rem;
-            color: var(--pure-white);
+        @keyframes drawCircle {
+            to {
+                stroke-dashoffset: 0;
+            }
         }
 
-        .progress-label {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        /* Achievements Section */
-        .achievements-section {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .section-mini-title {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.8rem;
-        }
-
-        .achievement-badge {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .achievement-badge:hover {
-            background: rgba(255, 107, 53, 0.1);
-            border-color: var(--accent-primary);
-            transform: scale(1.03);
-        }
-
-        .achievement-icon {
-            font-size: 1.8rem;
-            flex-shrink: 0;
-        }
-
-        .achievement-info {
-            flex: 1;
-        }
-
-        .achievement-value {
-            font-size: 1.1rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 0.2rem;
-            color: var(--pure-white);
-        }
-
-        .achievement-name {
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.2;
-            font-weight: 500;
-        }
-
-        /* Top Bikes Section */
-        .top-bikes-section {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .bike-list {
+        .stat-inner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .bike-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 1rem;
-            display: flex;
             align-items: center;
-            gap: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            justify-content: center;
         }
 
-        .bike-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: var(--accent-secondary);
-            transform: translateX(5px);
-        }
-
-        .bike-rank {
+        .stat-icon-ring {
             width: 32px;
             height: 32px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: 8px;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-icon-ring svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--orange-vibrant);
+            stroke-width: 2;
+        }
+
+        .stat-value-ring {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--white-pure), var(--cyan-electric));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label-ring {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: bounce 2s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white-pure);
+        }
+
+        /* ================================
+           STORY CARDS - Swipeable
+        ================================ */
+        .story-section {
+            background: var(--black-soft);
+            padding: 3rem 0;
+        }
+
+        .story-progress {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .story-progress .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 300ms var(--ease-out-expo);
+        }
+
+        .story-progress .dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: var(--orange-vibrant);
+        }
+
+        .story-cards-container {
+            position: relative;
+            height: 450px;
+            overflow: visible;
+            touch-action: pan-y;
+        }
+
+        .story-card {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 85%;
+            max-width: 320px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transform: translateX(-50%) scale(0.9);
+            opacity: 0.5;
+            transition: all 400ms var(--ease-out-expo);
+            cursor: grab;
+        }
+
+        .story-card:active {
+            cursor: grabbing;
+        }
+
+        .story-card.active {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+            z-index: 10;
+            box-shadow: 0 30px 80px rgba(255, 107, 53, 0.3);
+        }
+
+        .story-card.next {
+            transform: translateX(20%) scale(0.85);
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .story-card.prev {
+            transform: translateX(-120%) scale(0.85);
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            font-size: 0.9rem;
-            flex-shrink: 0;
+            background: linear-gradient(135deg, var(--orange-vibrant), var(--orange-dark));
+            border-radius: 50%;
+            animation: iconFloat 3s ease-in-out infinite;
         }
 
-        .bike-name {
-            flex: 1;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--pure-white);
+        .card-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--white-pure);
         }
 
-        .bike-emoji {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        /* Status Badges */
-        .status-badges {
-            display: flex;
-            gap: 0.6rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
-            background: rgba(0, 200, 83, 0.15);
-            border: 1px solid rgba(0, 200, 83, 0.3);
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-        }
-
-        .status-badge:hover {
-            background: rgba(0, 200, 83, 0.25);
-            transform: scale(1.05);
-        }
-
-        .status-badge.active-badge {
-            background: rgba(0, 217, 255, 0.15);
-            border-color: rgba(0, 217, 255, 0.3);
-        }
-
-        .status-badge.active-badge:hover {
-            background: rgba(0, 217, 255, 0.25);
-        }
-
-        /* Sections */
-        section {
-            padding: 8rem 3rem;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 6rem;
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+        .story-card h3 {
+            font-size: 1.8rem;
             font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
         }
 
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            line-height: 1.7;
-            font-weight: 400;
+        .story-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        /* About Section */
-        .about {
-            background: var(--pure-white);
+        .swipe-hint {
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            animation: fadeInOut 2s ease-in-out infinite;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+        .swipe-hint svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--orange-vibrant);
         }
 
-        .about-card {
-            padding: 3rem 2rem;
-            border-top: 2px solid var(--primary-black);
-            transition: all 0.3s ease;
+        /* ================================
+           JOURNEY TIMELINE - Vertical Scroll
+        ================================ */
+        .journey-mobile {
+            background: linear-gradient(180deg, var(--black-soft) 0%, var(--gray-dark) 100%);
+            padding: 4rem 1.5rem;
+            scroll-snap-align: start;
+            min-height: 100vh;
+        }
+
+        .section-header-mobile {
+            text-align: center;
+            margin-bottom: 4rem;
             opacity: 0;
             transform: translateY(30px);
+            transition: all 800ms var(--ease-out-expo);
         }
 
-        .about-card.visible {
+        .section-header-mobile.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .about-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .section-label-mobile {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cyan-electric);
             margin-bottom: 1rem;
-            letter-spacing: -0.5px;
+            font-weight: 600;
         }
 
-        .card-text {
+        .section-title-mobile {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .section-subtitle-mobile {
             font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
         }
 
-        /* Brands Section */
-        .brands {
-            background: var(--off-white);
-        }
-
-        .brands-intro {
-            max-width: 800px;
-            margin-bottom: 4rem;
-        }
-
-        /* Carousel Container */
-        .brands-carousel-wrapper {
-            overflow: hidden;
+        .timeline-mobile {
             position: relative;
-            padding: 2rem 0;
-            margin-top: 2rem;
+            padding-left: 3rem;
         }
 
-        .brands-carousel-wrapper::before,
-        .brands-carousel-wrapper::after {
-            content: '';
+        .timeline-line-mobile {
             position: absolute;
+            left: 1rem;
             top: 0;
             bottom: 0;
-            width: 150px;
-            z-index: 2;
-            pointer-events: none;
+            width: 2px;
+            background: linear-gradient(180deg,
+                var(--orange-vibrant) 0%,
+                var(--cyan-electric) 100%);
+            overflow: hidden;
         }
 
-        .brands-carousel-wrapper::before {
+        .timeline-line-mobile::after {
+            content: '';
+            position: absolute;
+            top: -100%;
             left: 0;
-            background: linear-gradient(to right, var(--surface-white), transparent);
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.8) 50%,
+                transparent 100%);
+            animation: pulseWave 3s ease-in-out infinite;
         }
 
-        .brands-carousel-wrapper::after {
-            right: 0;
-            background: linear-gradient(to left, var(--surface-white), transparent);
+        .timeline-item-mobile {
+            position: relative;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 600ms var(--ease-out-expo);
         }
 
-        .brands-carousel {
+        .timeline-item-mobile.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-content {
+            /* Wrapper for timeline content - no styling needed on mobile */
+        }
+
+        .timeline-empty {
+            display: none; /* Hidden on mobile, only used for desktop grid */
+        }
+
+        .timeline-dot-mobile {
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--orange-vibrant);
+            border-radius: 50%;
+            border: 4px solid var(--black-soft);
+            box-shadow: 0 0 0 4px var(--orange-vibrant);
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        .timeline-year-mobile {
+            font-size: 0.9rem;
+            color: var(--orange-vibrant);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title-mobile {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: -1px;
+        }
+
+        .timeline-description-mobile {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-stat-mobile {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--cyan-electric);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .timeline-stat-mobile::before {
+            content: '→ ';
+            color: var(--orange-vibrant);
+            margin-right: 0.3rem;
+        }
+
+        /* ================================
+           BIKES SECTION - Flippable Cards
+        ================================ */
+        .bikes-mobile {
+            background: var(--black-pure);
+            padding: 4rem 1.5rem;
+            padding-bottom: calc(180px + env(safe-area-inset-bottom, 0px));
+        }
+
+        .bikes-carousel {
             display: flex;
-            gap: 3rem;
-            animation: scroll 30s linear infinite;
-            width: max-content;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem 0;
+            margin: 0 -1.5rem;
+            padding-left: 1.5rem;
         }
 
-        .brands-carousel:hover {
-            animation-play-state: paused;
+        .bikes-carousel::-webkit-scrollbar {
+            display: none;
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+        .bike-card-mobile {
+            min-width: 280px;
+            height: 380px;
+            scroll-snap-align: center;
+            perspective: 1000px;
+            position: relative;
         }
 
-        .brand-card {
-            background: var(--pure-white);
-            padding: 2.5rem 3rem;
-            border-radius: 16px;
+        .bike-card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 600ms var(--ease-in-out-circ);
+        }
+
+        .bike-card-mobile.flipped .bike-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .bike-card-front,
+        .bike-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bike-card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(0, 217, 255, 0.2));
+        }
+
+        .bike-rank {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--orange-vibrant), var(--orange-dark));
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 180px;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .bike-icon-animated {
+            width: 100px;
             height: 100px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            flex-shrink: 0;
-            border: 1px solid var(--light-gray);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: iconFloat 3s ease-in-out infinite;
         }
 
-        .brand-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary-black);
+        .bike-icon-animated svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--orange-vibrant);
         }
 
-        .brand-logo img {
-            max-width: 140px;
-            max-height: 70px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            filter: grayscale(100%) opacity(0.7);
-            transition: filter 0.3s ease, transform 0.3s ease;
+        .bike-card-mobile h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
         }
 
-        .brand-card:hover .brand-logo img {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.1);
+        .bike-tag {
+            font-size: 0.85rem;
+            color: var(--cyan-electric);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
 
-        /* Social Section */
-        .social {
-            background: var(--primary-black);
-            color: var(--pure-white);
-            text-align: center;
+        .flip-btn {
+            padding: 0.8rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            color: var(--white-pure);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 200ms var(--ease-out-expo);
+            min-height: 48px;
         }
 
-        .social .section-label {
-            color: var(--medium-gray);
+        .flip-btn:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .social .section-title {
-            color: var(--pure-white);
+        .bike-specs {
+            list-style: none;
+            margin-bottom: 2rem;
         }
 
-        .social .section-subtitle {
-            color: var(--medium-gray);
-            margin: 0 auto;
+        .bike-specs li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
         }
 
-        .social-links {
+        .bike-specs svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--orange-vibrant);
+        }
+
+        .carousel-dots {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 4rem;
+            gap: 0.5rem;
+            margin-top: 2rem;
         }
 
-        .social-link {
+        .carousel-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 300ms var(--ease-out-expo);
+        }
+
+        .carousel-dots .dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: var(--orange-vibrant);
+        }
+
+        /* ================================
+           STATS SECTION - Count Up
+        ================================ */
+        .stats-mobile {
+            background: linear-gradient(180deg, var(--black-pure) 0%, var(--black-soft) 100%);
+            padding: 4rem 1.5rem;
+            padding-bottom: calc(240px + env(safe-area-inset-bottom, 0px));
+        }
+
+        .stats-grid-mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card-mobile {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 600ms var(--ease-out-back);
+        }
+
+        .stat-card-mobile.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stat-card-mobile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange-vibrant), var(--cyan-electric));
+            transform: scaleX(0);
+            transition: transform 800ms var(--ease-out-expo);
+        }
+
+        .stat-card-mobile.visible::before {
+            transform: scaleX(1);
+        }
+
+        .stat-icon-mobile {
+            margin: 0 auto 1rem;
             width: 60px;
             height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: transparent;
-            color: var(--pure-white);
-            text-decoration: none;
-            font-size: 1.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            animation: iconPulse 2s ease-in-out infinite;
         }
 
-        .social-link:hover {
-            background: var(--pure-white);
-            color: var(--primary-black);
-            border-color: var(--pure-white);
-            transform: translateY(-3px);
+        .stat-icon-mobile svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--orange-vibrant);
         }
 
-        /* Footer */
-        footer {
-            background: var(--primary-black);
-            padding: 3rem;
-            text-align: center;
+        .stat-number-mobile {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--orange-vibrant), var(--cyan-electric));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label-mobile {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+        }
+
+        /* ================================
+           STICKY CTA - Bottom Bar
+        ================================ */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 1.5rem;
+            padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transform: translateY(100%);
+            animation: slideUp 600ms var(--ease-out-expo) 1500ms forwards;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        footer p {
-            color: var(--medium-gray);
-            font-size: 0.9rem;
+        .cta-btn-primary {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--orange-vibrant), var(--orange-dark));
+            border: none;
+            border-radius: 16px;
+            color: var(--white-pure);
+            font-size: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            min-height: 56px;
+            transition: all 200ms var(--ease-out-expo);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .cta-btn-primary svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .btn-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .social-bubbles {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-bubble {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 200ms var(--ease-out-back);
+        }
+
+        .social-bubble:active {
+            transform: scale(0.9);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-bubble svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--white-pure);
+        }
+
+        /* Author Credit */
+        .author-credit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .author-label {
             font-weight: 400;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
+        .author-heart {
+            width: 16px;
+            height: 16px;
+            stroke: var(--orange-vibrant);
+            fill: var(--orange-vibrant);
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        .author-link {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--cyan-electric);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 300ms var(--ease-out-expo);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+        }
+
+        .author-link:hover {
+            color: var(--orange-vibrant);
+            background: rgba(255, 107, 53, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .author-link i {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ================================
+           ANIMATIONS
+        ================================ */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes wordSlideIn {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -1226,7 +1024,623 @@
             }
         }
 
-        /* Reduce motion for accessibility */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 4px var(--orange-vibrant);
+            }
+            50% {
+                box-shadow: 0 0 0 8px var(--orange-vibrant),
+                            0 0 0 12px rgba(255, 107, 53, 0.3);
+            }
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+
+        @keyframes pulseWave {
+            0% {
+                top: -100%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(1.1);
+            }
+            20%, 40% {
+                transform: scale(0.9);
+            }
+        }
+
+        /* ================================
+           RESPONSIVE - Larger Phones
+        ================================ */
+        @media (min-width: 375px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .stat-circle-wrapper {
+                width: 110px;
+                height: 110px;
+            }
+
+            .stat-value-ring {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ================================
+           TABLET RESPONSIVE (768px - 1024px)
+        ================================ */
+        @media (min-width: 768px) {
+            /* Hero adjustments */
+            .hero-mobile {
+                padding: 2rem;
+            }
+
+            .hero-content {
+                padding: 3rem 2rem;
+            }
+
+            .hero-title {
+                font-size: 5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .profile-container {
+                width: 160px;
+                height: 160px;
+            }
+
+            .stat-circle-wrapper {
+                width: 120px;
+                height: 120px;
+            }
+
+            .stat-value-ring {
+                font-size: 1.5rem;
+            }
+
+            .stat-label-ring {
+                font-size: 0.85rem;
+            }
+
+            /* Story cards - show 2 at once */
+            .story-cards-container {
+                height: 500px;
+                display: flex; /* Ensure flex layout */
+                position: relative;
+            }
+
+            .story-card {
+                position: absolute; /* Keep absolute for mobile swipe */
+                max-width: 380px;
+            }
+
+            /* Timeline stays similar but larger text */
+            .timeline-title-mobile {
+                font-size: 1.8rem;
+            }
+
+            /* Stats grid - 3 columns */
+            .stats-grid-mobile {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Bikes carousel - show 2 */
+            .bikes-carousel {
+                padding-left: 2rem;
+                display: flex; /* Keep flex for tablet scrolling */
+            }
+
+            .bike-card-mobile {
+                position: relative; /* Ensure relative positioning */
+                min-width: 340px;
+                height: 420px;
+            }
+
+            /* Stats section - ensure proper spacing */
+            .stats-mobile {
+                padding-bottom: calc(220px + env(safe-area-inset-bottom, 0px));
+            }
+
+            /* CTA stays sticky but wider */
+            .sticky-cta {
+                padding: 1.5rem 3rem;
+                padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+            }
+        }
+
+        /* ================================
+           DESKTOP RESPONSIVE (>1024px)
+        ================================ */
+        @media (min-width: 1024px) {
+            /* Remove scroll snap for better desktop experience */
+            html {
+                scroll-snap-type: none;
+            }
+
+            section {
+                scroll-snap-align: none;
+                padding: 8rem 3rem;
+            }
+
+            /* Hero - Side by side layout */
+            .hero-mobile {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-content {
+                padding: 4rem 0;
+                padding-bottom: 4rem;
+                max-width: 1400px;
+                margin: 0 auto;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6rem;
+                align-items: center;
+                text-align: left;
+            }
+
+            .hero-left {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-container {
+                width: 200px;
+                height: 200px;
+                margin: 0 0 2rem 0;
+            }
+
+            .hero-title {
+                font-size: 6rem;
+                text-align: left;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+                text-align: left;
+                margin-bottom: 2rem;
+            }
+
+            .hero-stats-compact {
+                justify-content: flex-start;
+                margin-top: 2rem;
+            }
+
+            .stat-circle-wrapper {
+                width: 140px;
+                height: 140px;
+            }
+
+            .stat-value-ring {
+                font-size: 1.8rem;
+            }
+
+            .stat-label-ring {
+                font-size: 0.9rem;
+            }
+
+            /* Story cards - Grid layout */
+            .story-section {
+                padding: 8rem 3rem;
+            }
+
+            .story-progress {
+                display: none; /* Hide dots on desktop */
+            }
+
+            .story-cards-container {
+                height: auto;
+                overflow: visible;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            .story-card {
+                position: relative !important; /* Override absolute positioning */
+                transform: none !important;
+                opacity: 1 !important;
+                width: 100% !important;
+                max-width: none !important;
+                left: auto !important;
+                top: auto !important;
+                cursor: default;
+            }
+
+            .story-card.active,
+            .story-card.prev,
+            .story-card.next {
+                position: relative !important;
+                transform: none !important;
+                opacity: 1 !important;
+                left: auto !important;
+            }
+
+            .swipe-hint {
+                display: none; /* Hide swipe hint */
+            }
+
+            /* Journey timeline - Center aligned alternating */
+            .journey-mobile {
+                padding: 8rem 3rem;
+            }
+
+            .timeline-mobile {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-left: 0;
+            }
+
+            .timeline-line-mobile {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-item-mobile {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                gap: 4rem;
+                align-items: center;
+                margin-bottom: 6rem;
+            }
+
+            .timeline-content {
+                display: block; /* Show wrapper on desktop */
+            }
+
+            .timeline-empty {
+                display: block; /* Show empty spacer on desktop */
+            }
+
+            .timeline-item-mobile:nth-child(odd) .timeline-content {
+                grid-column: 1;
+                text-align: right;
+            }
+
+            .timeline-item-mobile:nth-child(odd) .timeline-dot-mobile {
+                grid-column: 2;
+                position: relative;
+                left: 0;
+            }
+
+            .timeline-item-mobile:nth-child(odd) .timeline-empty {
+                grid-column: 3;
+            }
+
+            .timeline-item-mobile:nth-child(even) .timeline-empty {
+                grid-column: 1;
+            }
+
+            .timeline-item-mobile:nth-child(even) .timeline-dot-mobile {
+                grid-column: 2;
+                position: relative;
+                left: 0;
+            }
+
+            .timeline-item-mobile:nth-child(even) .timeline-content {
+                grid-column: 3;
+                text-align: left;
+            }
+
+            .timeline-dot-mobile {
+                width: 24px;
+                height: 24px;
+                left: 0 !important;
+                position: relative;
+            }
+
+            .timeline-title-mobile {
+                font-size: 2rem;
+            }
+
+            .timeline-description-mobile {
+                font-size: 1.1rem;
+            }
+
+            /* Bikes - 3 column grid */
+            .bikes-mobile {
+                padding: 8rem 3rem;
+                padding-bottom: 8rem;
+            }
+
+            .bikes-carousel {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                overflow: visible;
+                scroll-snap-type: none;
+                padding: 0;
+                margin: 0;
+                max-width: 1200px;
+                margin: 3rem auto 0;
+            }
+
+            .bike-card-mobile {
+                position: relative !important; /* Override absolute positioning */
+                min-width: 300px;
+                width: 100% !important; /* Take full grid cell width */
+                height: 480px;
+                left: auto !important; /* Override left positioning */
+                top: auto !important; /* Override top positioning */
+                transform: none !important; /* Remove any transforms */
+            }
+
+            .bike-card-front,
+            .bike-card-back {
+                padding: 3rem 2.5rem;
+            }
+
+            .bike-card-mobile h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .bike-tag {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+
+            .bike-icon-animated {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 2rem;
+            }
+
+            .bike-icon-animated svg {
+                width: 70px;
+                height: 70px;
+            }
+
+            .flip-btn {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            .bike-specs li {
+                padding: 1.2rem;
+                font-size: 1.05rem;
+            }
+
+            .carousel-dots {
+                display: none; /* Hide dots on desktop */
+            }
+
+            /* Stats - Dashboard style without containers */
+            .stats-mobile {
+                padding: 8rem 3rem;
+                padding-bottom: 8rem;
+            }
+
+            .stats-grid-mobile {
+                max-width: 1200px;
+                margin: 5rem auto 0;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4rem 5rem;
+            }
+
+            .stat-card-mobile {
+                background: transparent;
+                border: none;
+                padding: 0;
+                text-align: center;
+                transition: all 300ms var(--ease-out-expo);
+            }
+
+            .stat-card-mobile::before {
+                display: none; /* Remove top bar */
+            }
+
+            .stat-card-mobile:hover {
+                transform: translateY(-8px);
+            }
+
+            .stat-icon-mobile {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 0.5rem;
+                position: relative;
+            }
+
+            .stat-icon-mobile::before {
+                content: '';
+                position: absolute;
+                inset: -10px;
+                background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            .stat-icon-mobile svg {
+                width: 48px;
+                height: 48px;
+                stroke-width: 2.5;
+            }
+
+            .stat-number-mobile {
+                font-size: 4rem;
+                margin-bottom: 0.8rem;
+                font-weight: 900;
+            }
+
+            .stat-label-mobile {
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                font-weight: 500;
+            }
+
+            /* CTA - Transform to elegant footer */
+            .sticky-cta {
+                position: relative;
+                transform: translateY(0);
+                animation: none;
+                background: linear-gradient(180deg, var(--gray-dark) 0%, var(--black-pure) 100%);
+                padding: 4rem 3rem 2rem;
+                border-top: 2px solid rgba(255, 107, 53, 0.2);
+            }
+
+            .cta-btn-primary {
+                max-width: 350px;
+                margin: 0 auto 3rem;
+                font-size: 1.1rem;
+                padding: 1.4rem;
+            }
+
+            .social-bubbles {
+                margin-top: 0;
+                justify-content: center;
+                gap: 1.5rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                margin-bottom: 2rem;
+            }
+
+            .social-bubble {
+                width: 60px;
+                height: 60px;
+                transition: all 300ms var(--ease-out-expo);
+            }
+
+            .social-bubble:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 107, 53, 0.2);
+                border-color: var(--orange-vibrant);
+            }
+
+            .social-bubble svg {
+                width: 26px;
+                height: 26px;
+            }
+
+            /* Author credit - desktop styling */
+            .author-credit {
+                font-size: 0.95rem;
+                padding-top: 2.5rem;
+            }
+
+            .author-link {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+
+            /* Scroll indicator - hide on desktop */
+            .scroll-indicator {
+                display: none;
+            }
+
+            /* Section headers */
+            .section-header-mobile {
+                margin-bottom: 6rem;
+            }
+
+            .section-title-mobile {
+                font-size: 3.5rem;
+            }
+
+            .section-subtitle-mobile {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ================================
+           LARGE DESKTOP (>1440px)
+        ================================ */
+        @media (min-width: 1440px) {
+            .hero-title {
+                font-size: 7rem;
+            }
+
+            .stat-circle-wrapper {
+                width: 160px;
+                height: 160px;
+            }
+
+            .stat-value-ring {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 10rem 4rem;
+            }
+        }
+
+        /* ================================
+           ACCESSIBILITY - Reduced Motion
+        ================================ */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -1235,583 +1649,520 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-
-            .badge-verified,
-            .badge-active {
-                animation: none !important;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-            }
-
-            .profile-picture {
-                width: 150px;
-                height: 150px;
-            }
-
-            .profile-ring {
-                width: 170px;
-                height: 170px;
-            }
-
-            .profile-badges {
-                align-items: center;
-            }
-
-            .nav-container {
-                padding: 1.5rem 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                padding: 6rem 2rem 3rem;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .hero-content {
-                order: 2;
-            }
-
-            .hero-stats-dashboard {
-                order: 1;
-            }
-
-            .stats-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .metric-value {
-                font-size: 1.8rem;
-            }
-
-            .progress-value {
-                font-size: 1.5rem;
-            }
-
-            .hero-stats {
-                gap: 2rem;
-            }
-
-            section {
-                padding: 5rem 2rem;
-            }
-
-            .section-header {
-                margin-bottom: 4rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .brands-carousel-wrapper::before,
-            .brands-carousel-wrapper::after {
-                width: 50px;
-            }
-
-            .brand-card {
-                min-width: 150px;
-                padding: 2rem 2.5rem;
-            }
-
-            .brand-logo img {
-                max-width: 120px;
-                max-height: 60px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .stat-item {
-                border-left: none;
-                border-top: 2px solid rgba(255, 255, 255, 0.3);
-                padding-left: 0;
-                padding-top: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="nav">
-        <div class="nav-container">
-            <div class="logo">LUH PÉREZ</div>
-            <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Historia</a></li>
-                <li><a href="#brands">Marcas</a></li>
-                <li><a href="#social">Contacto</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="#home">Inicio</a>
-        <a href="#about">Historia</a>
-        <a href="#brands">Marcas</a>
-        <a href="#social">Contacto</a>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <!-- Profile Picture Section -->
-                <div class="profile-section">
-                    <div class="profile-picture-container">
-                        <div class="profile-ring"></div>
-                        <img src="https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/494701268_742633964950176_5301665088945580637_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=soScYVCUDUcQ7kNvwGNU_Ke&_nc_oc=AdkgAXysKrKV6SJn9_oTk3XSvXIczWFBqgKy-uHPrwq8nRYSyl1obL0wUx_e261wC_U&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=I2UgIQUqBWvtKSPjPuiGXQ&oh=00_Afd056tv83Dkulo0obgLciRhHml_dD8U35ju3auz3BdnWQ&oe=69088ED9" 
-                             alt="Luh Pérez - Motociclista Profesional" 
-                             class="profile-picture"
-                             loading="eager">
-                    </div>
-                    <div class="profile-badges">
-                        <div class="profile-badge">
-                            <span class="profile-badge-icon">✓</span>
-                            <span>Creadora Verificada</span>
-                        </div>
-                        <div class="profile-badge">
-                            <span class="profile-badge-icon">🏍️</span>
-                            <span>Motociclista Pro</span>
-                        </div>
-                        <div class="profile-badge">
-                            <span class="profile-badge-icon">📊</span>
-                            <span>208K+ Seguidores</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-label">Pasión sobre Ruedas</div>
-                <h1>Luh Pérez</h1>
-                <h2>Motociclista & Aventurera</h2>
+    <!-- SECTION 1: HERO -->
+    <section class="hero-mobile" id="hero">
+        <div class="hero-bg" id="hero-bg"></div>
 
-                <!-- Mobile: Short Description -->
-                <p class="hero-description-short">
-                    Creadora de contenido apasionada por las motos 🏍️<br>
-                    Inspirando a miles en Colombia y LATAM
-                </p>
-
-                <!-- Mobile: Compact Hero Stat -->
-                <div class="hero-stat-compact">
-                    <div class="hero-stat-number">208K+</div>
-                    <div class="hero-stat-label">Seguidores Comprometidos</div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="profile-container">
+                    <div class="profile-ring"></div>
+                    <img src="https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/494701268_742633964950176_5301665088945580637_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=soScYVCUDUcQ7kNvwGNU_Ke&_nc_oc=AdkgAXysKrKV6SJn9_oTk3XSvXIczWFBqgKy-uHPrwq8nRYSyl1obL0wUx_e261wC_U&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=I2UgIQUqBWvtKSPjPuiGXQ&oh=00_Afd056tv83Dkulo0obgLciRhHml_dD8U35ju3auz3BdnWQ&oe=69088ED9"
+                         alt="Luh Pérez"
+                         class="profile-img">
                 </div>
 
-                <!-- Desktop: Full Description (hidden on mobile) -->
-                <p class="hero-description">
-                    Arriesgada, atrevida y aventurera. Nacida en Bogotá, Colombia,
-                    estudiante de Psicología y apasionada por las dos ruedas.
-                    Mi día se hace extraordinario cuando monto mi moto y conquisto
-                    cada camino con valentía.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">208K+</div>
-                        <div class="stat-label">Seguidores</div>
+                <h1 class="hero-title">
+                    <span class="word">Luh</span>
+                    <span class="word">Pérez</span>
+                </h1>
+
+                <p class="hero-subtitle">Motociclista • Aventurera</p>
+            </div>
+
+            <div class="hero-stats-compact">
+                <!-- Stat 1: Followers -->
+                <div class="stat-ring-container">
+                    <div class="stat-circle-wrapper">
+                        <svg class="stat-circle-svg" viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="gradient-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#E74C3C;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="stat-circle-bg" cx="50" cy="50" r="45"/>
+                            <circle class="stat-circle-progress" cx="50" cy="50" r="45"
+                                    style="stroke-dashoffset: 71;"/>
+                        </svg>
+                        <div class="stat-inner-content">
+                            <div class="stat-icon-ring">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div class="stat-value-ring">208K</div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Pasión</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Aventuras</div>
-                    </div>
+                    <div class="stat-label-ring">Seguidores</div>
                 </div>
-                <div class="cta-buttons">
-                    <a href="#social" class="btn btn-primary">Conectar</a>
-                    <a href="#about" class="btn btn-secondary">Conocer Más</a>
+
+                <!-- Stat 2: Kilometers -->
+                <div class="stat-ring-container">
+                    <div class="stat-circle-wrapper">
+                        <svg class="stat-circle-svg" viewBox="0 0 100 100">
+                            <circle class="stat-circle-bg" cx="50" cy="50" r="45"/>
+                            <circle class="stat-circle-progress" cx="50" cy="50" r="45"
+                                    style="stroke-dashoffset: 113;"/>
+                        </svg>
+                        <div class="stat-inner-content">
+                            <div class="stat-icon-ring">
+                                <i data-lucide="map"></i>
+                            </div>
+                            <div class="stat-value-ring">15K+</div>
+                        </div>
+                    </div>
+                    <div class="stat-label-ring">Kilómetros</div>
+                </div>
+
+                <!-- Stat 3: Female Audience -->
+                <div class="stat-ring-container">
+                    <div class="stat-circle-wrapper">
+                        <svg class="stat-circle-svg" viewBox="0 0 100 100">
+                            <circle class="stat-circle-bg" cx="50" cy="50" r="45"/>
+                            <circle class="stat-circle-progress" cx="50" cy="50" r="45"
+                                    style="stroke-dashoffset: 42;"/>
+                        </svg>
+                        <div class="stat-inner-content">
+                            <div class="stat-icon-ring">
+                                <i data-lucide="heart"></i>
+                            </div>
+                            <div class="stat-value-ring">85%</div>
+                        </div>
+                    </div>
+                    <div class="stat-label-ring">Audiencia<br>Femenina</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" id="scroll-indicator">
+            <span>Desliza</span>
+            <i data-lucide="chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- SECTION 2: STORY CARDS -->
+    <section class="story-section" id="story">
+        <div class="story-progress">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="story-cards-container" id="story-cards">
+            <div class="story-card active" data-index="0">
+                <div class="card-icon">
+                    <i data-lucide="bike"></i>
+                </div>
+                <h3>Mi Primera Moto</h3>
+                <p>Kawasaki KLX 150 - donde todo comenzó. Mi primera aventura sobre dos ruedas.</p>
+            </div>
+
+            <div class="story-card next" data-index="1">
+                <div class="card-icon">
+                    <i data-lucide="mountain"></i>
+                </div>
+                <h3>15K Kilómetros</h3>
+                <p>Recorriendo cada rincón de Colombia, conquistando montañas y caminos.</p>
+            </div>
+
+            <div class="story-card" data-index="2">
+                <div class="card-icon">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3>208K Seguidores</h3>
+                <p>Una comunidad increíble que inspiro cada día con mi pasión.</p>
+            </div>
+
+            <div class="story-card" data-index="3">
+                <div class="card-icon">
+                    <i data-lucide="heart"></i>
+                </div>
+                <h3>Mi Propósito</h3>
+                <p>Inspirar a otras mujeres a romper límites y conquistar sus sueños.</p>
+            </div>
+        </div>
+
+        <div class="swipe-hint">
+            <i data-lucide="arrow-right"></i>
+            Desliza para continuar
+        </div>
+    </section>
+
+    <!-- SECTION 3: JOURNEY TIMELINE -->
+    <section class="journey-mobile" id="journey">
+        <div class="section-header-mobile">
+            <div class="section-label-mobile">Mi Aventura</div>
+            <h2 class="section-title-mobile">El Camino</h2>
+            <p class="section-subtitle-mobile">Cada kilómetro una historia</p>
+        </div>
+
+        <div class="timeline-mobile">
+            <div class="timeline-line-mobile"></div>
+
+            <div class="timeline-item-mobile">
+                <div class="timeline-content">
+                    <div class="timeline-year-mobile">2022</div>
+                    <h3 class="timeline-title-mobile">El Comienzo</h3>
+                    <p class="timeline-description-mobile">
+                        Todo empezó con una Kawasaki KLX 150. Mi primera moto, mi primera gran aventura.
+                    </p>
+                    <span class="timeline-stat-mobile">Nivel: Principiante</span>
+                </div>
+                <div class="timeline-dot-mobile"></div>
+                <div class="timeline-empty"></div>
+            </div>
+
+            <div class="timeline-item-mobile">
+                <div class="timeline-empty"></div>
+                <div class="timeline-dot-mobile"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year-mobile">2023</div>
+                    <h3 class="timeline-title-mobile">Conquistando Colombia</h3>
+                    <p class="timeline-description-mobile">
+                        8,500 km explorando 12 departamentos. Desde montañas hasta llanos.
+                    </p>
+                    <span class="timeline-stat-mobile">12 Departamentos</span>
                 </div>
             </div>
 
-            <div class="hero-stats-dashboard">
-                <div class="stats-card">
-                    <div class="stats-card-header">
-                        <h3 class="stats-card-title">Mi Impacto</h3>
-                        <p class="stats-card-subtitle">Datos en tiempo real</p>
-                    </div>
+            <div class="timeline-item-mobile">
+                <div class="timeline-content">
+                    <div class="timeline-year-mobile">2024</div>
+                    <h3 class="timeline-title-mobile">Nivel Pro</h3>
+                    <p class="timeline-description-mobile">
+                        Yamaha WR 250F y KTM 450 SX-F. Dominando las dirt bikes más potentes.
+                    </p>
+                    <span class="timeline-stat-mobile">15,000+ Km Totales</span>
+                </div>
+                <div class="timeline-dot-mobile"></div>
+                <div class="timeline-empty"></div>
+            </div>
 
-                    <!-- Key Metrics Grid -->
-                    <div class="metrics-grid">
-                        <div class="metric-card">
-                            <div class="metric-value" id="followers-count">208K</div>
-                            <div class="metric-label">Seguidores</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value" id="monthly-reach">500K</div>
-                            <div class="metric-label">Alcance Mensual</div>
-                        </div>
-                    </div>
-
-                    <!-- Engagement Progress Circle -->
-                    <div class="progress-card">
-                        <div class="progress-ring">
-                            <svg width="70" height="70">
-                                <defs>
-                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <circle class="progress-ring-bg" cx="35" cy="35" r="32.5"/>
-                                <circle class="progress-ring-fill" cx="35" cy="35" r="32.5"
-                                        style="stroke-dashoffset: 45"/>
-                            </svg>
-                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1rem; font-weight: 700;">9%</div>
-                        </div>
-                        <div class="progress-content">
-                            <div class="progress-value">Engagement</div>
-                            <div class="progress-label">85% Audiencia Femenina</div>
-                        </div>
-                    </div>
-
-                    <!-- Achievements Section -->
-                    <div class="achievements-section">
-                        <div class="section-mini-title">Mi Jornada</div>
-                        <div class="achievements-grid">
-                            <div class="achievement-badge">
-                                <div class="achievement-icon">🛣️</div>
-                                <div class="achievement-info">
-                                    <div class="achievement-value">15K+</div>
-                                    <div class="achievement-name">Km Recorridos</div>
-                                </div>
-                            </div>
-                            <div class="achievement-badge">
-                                <div class="achievement-icon">📍</div>
-                                <div class="achievement-info">
-                                    <div class="achievement-value">12</div>
-                                    <div class="achievement-name">Departamentos</div>
-                                </div>
-                            </div>
-                            <div class="achievement-badge">
-                                <div class="achievement-icon">🎬</div>
-                                <div class="achievement-info">
-                                    <div class="achievement-value">933</div>
-                                    <div class="achievement-name">Posts</div>
-                                </div>
-                            </div>
-                            <div class="achievement-badge">
-                                <div class="achievement-icon">⏱️</div>
-                                <div class="achievement-info">
-                                    <div class="achievement-value">2+</div>
-                                    <div class="achievement-name">Años Activa</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Top Bikes Section -->
-                    <div class="top-bikes-section">
-                        <div class="section-mini-title">Mis Motos Favoritas</div>
-                        <div class="bike-list">
-                            <div class="bike-item">
-                                <div class="bike-rank">1</div>
-                                <div class="bike-name">Kawasaki KLX 150</div>
-                                <div class="bike-emoji">🏍️</div>
-                            </div>
-                            <div class="bike-item">
-                                <div class="bike-rank">2</div>
-                                <div class="bike-name">Yamaha WR 250F</div>
-                                <div class="bike-emoji">⚡</div>
-                            </div>
-                            <div class="bike-item">
-                                <div class="bike-rank">3</div>
-                                <div class="bike-name">KTM 450 SX-F</div>
-                                <div class="bike-emoji">🔥</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Status Badges -->
-                    <div class="status-badges">
-                        <div class="status-badge">✓ Verificada</div>
-                        <div class="status-badge active-badge">🇨🇴 Colombia 75%</div>
-                        <div class="status-badge">🌎 LATAM 20%</div>
-                    </div>
+            <div class="timeline-item-mobile">
+                <div class="timeline-empty"></div>
+                <div class="timeline-dot-mobile"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year-mobile">2025</div>
+                    <h3 class="timeline-title-mobile">El Futuro</h3>
+                    <p class="timeline-description-mobile">
+                        Mi sueño: recorrer toda Colombia y llevar mi pasión por LATAM.
+                    </p>
+                    <span class="timeline-stat-mobile">Sin Límites</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">¿Quién Soy?</div>
-                <h2 class="section-title">Mi Historia</h2>
-                <p class="section-subtitle">
-                    Mujer independiente y empoderada que no busca la aprobación de nadie. 
-                    He aprendido de los errores y las caídas. Para mí no existen límites, 
-                    porque los límites se imponen desde la mente.
-                </p>
+    <!-- SECTION 4: BIKES GALLERY -->
+    <section class="bikes-mobile" id="bikes">
+        <div class="section-header-mobile">
+            <div class="section-label-mobile">Mis Compañeras</div>
+            <h2 class="section-title-mobile">Mis Motos</h2>
+            <p class="section-subtitle-mobile">Toca para ver detalles</p>
+        </div>
+
+        <div class="bikes-carousel">
+            <div class="bike-card-mobile" data-bike="klx150">
+                <div class="bike-card-inner">
+                    <div class="bike-card-front">
+                        <div class="bike-rank">1</div>
+                        <div class="bike-icon-animated">
+                            <i data-lucide="bike"></i>
+                        </div>
+                        <h3>Kawasaki KLX 150</h3>
+                        <p class="bike-tag">Mi Primera Amor</p>
+                        <button class="flip-btn">Ver Detalles</button>
+                    </div>
+                    <div class="bike-card-back">
+                        <h3>Kawasaki KLX 150</h3>
+                        <ul class="bike-specs">
+                            <li><i data-lucide="gauge"></i> 150cc</li>
+                            <li><i data-lucide="zap"></i> 14HP</li>
+                            <li><i data-lucide="droplet"></i> 7L</li>
+                        </ul>
+                        <button class="flip-btn">Regresar</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="about-grid">
-                <div class="about-card" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="card-icon">🏍️</div>
-                    <h3 class="card-title">Dirt Bikes</h3>
-                    <p class="card-text">
-                        Amante de las motos de tierra, conquistando terrenos difíciles
-                        y sintiendo la adrenalina pura en cada curva. Las dirt bikes
-                        no son solo mi pasión, son mi forma de vida.
-                    </p>
+            <div class="bike-card-mobile" data-bike="wr250">
+                <div class="bike-card-inner">
+                    <div class="bike-card-front">
+                        <div class="bike-rank">2</div>
+                        <div class="bike-icon-animated">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <h3>Yamaha WR 250F</h3>
+                        <p class="bike-tag">El Salto de Calidad</p>
+                        <button class="flip-btn">Ver Detalles</button>
+                    </div>
+                    <div class="bike-card-back">
+                        <h3>Yamaha WR 250F</h3>
+                        <ul class="bike-specs">
+                            <li><i data-lucide="gauge"></i> 250cc</li>
+                            <li><i data-lucide="zap"></i> 42HP</li>
+                            <li><i data-lucide="droplet"></i> 7.5L</li>
+                        </ul>
+                        <button class="flip-btn">Regresar</button>
+                    </div>
                 </div>
+            </div>
 
-                <div class="about-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <div class="card-icon">🌎</div>
-                    <h3 class="card-title">Aventurera</h3>
-                    <p class="card-text">
-                        Mi sueño es conocer toda Colombia y viajar por el mundo.
-                        Cada ruta es una nueva historia, cada camino una lección de
-                        valentía. Amo la naturaleza, la paz y la libertad del camino.
-                    </p>
+            <div class="bike-card-mobile" data-bike="ktm450">
+                <div class="bike-card-inner">
+                    <div class="bike-card-front">
+                        <div class="bike-rank">3</div>
+                        <div class="bike-icon-animated">
+                            <i data-lucide="flame"></i>
+                        </div>
+                        <h3>KTM 450 SX-F</h3>
+                        <p class="bike-tag">Beast Mode</p>
+                        <button class="flip-btn">Ver Detalles</button>
+                    </div>
+                    <div class="bike-card-back">
+                        <h3>KTM 450 SX-F</h3>
+                        <ul class="bike-specs">
+                            <li><i data-lucide="gauge"></i> 450cc</li>
+                            <li><i data-lucide="zap"></i> 63HP</li>
+                            <li><i data-lucide="droplet"></i> 7L</li>
+                        </ul>
+                        <button class="flip-btn">Regresar</button>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="about-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="card-icon">📱</div>
-                    <h3 class="card-title">Creadora de Contenido</h3>
-                    <p class="card-text">
-                        Comparto mi pasión en redes sociales, inspirando a otras
-                        mujeres a perseguir sus sueños. Construyendo una comunidad
-                        de moteros que aman la aventura tanto como yo.
-                    </p>
+        <div class="carousel-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: STATS -->
+    <section class="stats-mobile" id="stats">
+        <div class="section-header-mobile">
+            <div class="section-label-mobile">El Impacto</div>
+            <h2 class="section-title-mobile">Los Números</h2>
+            <p class="section-subtitle-mobile">Cada dato cuenta una historia</p>
+        </div>
+
+        <div class="stats-grid-mobile">
+            <div class="stat-card-mobile">
+                <div class="stat-icon-mobile">
+                    <i data-lucide="map"></i>
                 </div>
+                <div class="stat-number-mobile" data-count="15000">0</div>
+                <div class="stat-label-mobile">Kilómetros</div>
+            </div>
+
+            <div class="stat-card-mobile">
+                <div class="stat-icon-mobile">
+                    <i data-lucide="map-pin"></i>
+                </div>
+                <div class="stat-number-mobile" data-count="12">0</div>
+                <div class="stat-label-mobile">Departamentos</div>
+            </div>
+
+            <div class="stat-card-mobile">
+                <div class="stat-icon-mobile">
+                    <i data-lucide="users"></i>
+                </div>
+                <div class="stat-number-mobile" data-count="208">0</div>
+                <div class="stat-label-mobile">Mil Seguidores</div>
+            </div>
+
+            <div class="stat-card-mobile">
+                <div class="stat-icon-mobile">
+                    <i data-lucide="camera"></i>
+                </div>
+                <div class="stat-number-mobile" data-count="933">0</div>
+                <div class="stat-label-mobile">Posts</div>
+            </div>
+
+            <div class="stat-card-mobile">
+                <div class="stat-icon-mobile">
+                    <i data-lucide="heart"></i>
+                </div>
+                <div class="stat-number-mobile" data-count="85">0</div>
+                <div class="stat-label-mobile">% Mujeres</div>
+            </div>
+
+            <div class="stat-card-mobile">
+                <div class="stat-icon-mobile">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <div class="stat-number-mobile" data-count="500">0</div>
+                <div class="stat-label-mobile">K Alcance</div>
             </div>
         </div>
     </section>
 
-    <!-- Brands Section -->
-    <section class="brands" id="brands">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Aliados Estratégicos</div>
-                <h2 class="section-title">Marcas que Confían en Mí</h2>
-                <div class="brands-intro">
-                    <p class="section-subtitle">
-                        Respaldada por las mejores marcas de motocicletas de Colombia y el mundo. 
-                        Estas son las empresas que creen en mi pasión y mi contenido.
-                    </p>
-                </div>
-            </div>
+    <!-- STICKY CTA -->
+    <div class="sticky-cta">
+        <button class="cta-btn-primary" onclick="window.open('https://www.instagram.com/luhperez/', '_blank')">
+            <i data-lucide="instagram"></i>
+            <span>Sígueme en Instagram</span>
+            <span class="btn-shine"></span>
+        </button>
 
-            <div class="brands-carousel-wrapper">
-                <div class="brands-carousel">
-                    <!-- First set of logos -->
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Kawasaki-logo.svg" alt="Kawasaki Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Yamaha_Motor_Logo_%28full%29.svg" alt="Yamaha Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Suzuki_logo_2025_%28vertical%29.svg" alt="Suzuki Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/KTM-Logo.svg" alt="KTM Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://cdn.brandfetch.io/id3_agxFfR/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1712594842066" alt="Auteco Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Akt_logo.svg" alt="AKT Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <!-- Duplicate set for seamless loop -->
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Kawasaki-logo.svg" alt="Kawasaki Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Yamaha_Motor_Logo_%28full%29.svg" alt="Yamaha Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Suzuki_logo_2025_%28vertical%29.svg" alt="Suzuki Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/KTM-Logo.svg" alt="KTM Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://auteco.vtexassets.com/assets/vtex.file-manager-graphql/images/842550b6-d0da-4797-aadb-dc4e0493dc91___f559a76f2dffdf25985c6b99ec59ffef.svg" alt="Auteco Logo" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="brand-card">
-                        <div class="brand-logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Akt_logo.svg" alt="AKT Logo" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="social-bubbles">
+            <a href="https://www.facebook.com/luh608/" class="social-bubble" target="_blank" aria-label="Facebook">
+                <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" class="social-bubble" aria-label="YouTube">
+                <i data-lucide="youtube"></i>
+            </a>
+            <a href="#" class="social-bubble" aria-label="TikTok">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                </svg>
+            </a>
+            <a href="#" class="social-bubble" aria-label="Buy Me a Coffee">
+                <i data-lucide="coffee"></i>
+            </a>
         </div>
-    </section>
 
-    <!-- Social Section -->
-    <section class="social" id="social">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label">Conectemos</div>
-                <h2 class="section-title">Sígueme</h2>
-                <p class="section-subtitle">
-                    Únete a mi comunidad y vive la pasión por las motos. 
-                    Contenido exclusivo, tips, aventuras y mucho más.
-                </p>
-            </div>
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/luhperez/" class="social-link" target="_blank" rel="noopener" title="Instagram" data-aos="fade-up" data-aos-duration="600">📷</a>
-                <a href="https://www.facebook.com/luh608/" class="social-link" target="_blank" rel="noopener" title="Facebook" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">📘</a>
-                <a href="#" class="social-link" title="TikTok" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">🎵</a>
-                <a href="#" class="social-link" title="YouTube" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">▶️</a>
-                <a href="#" class="social-link" title="Email" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">✉️</a>
-            </div>
+        <div class="author-credit">
+            <span class="author-label">Crafted with</span>
+            <i data-lucide="heart" class="author-heart"></i>
+            <span class="author-label">by</span>
+            <a href="https://github.com/srRamos" target="_blank" class="author-link">
+                <i data-lucide="code"></i>
+                @srRamos
+            </a>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Luh Pérez. Todos los derechos reservados.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.6;">Diseñado con pasión para los amantes de las motos</p>
-        </div>
-    </footer>
-
-    <!-- AOS Animation Library Script -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <!-- CountUp.js for animated numbers -->
-    <script src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js"></script>
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 100
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ================================
+        // HERO STATS RING ANIMATION
+        // ================================
+        window.addEventListener('load', () => {
+            // Trigger ring animations after page load
+            setTimeout(() => {
+                document.querySelectorAll('.stat-ring-container').forEach(container => {
+                    container.classList.add('visible');
+                });
+            }, 1500);
         });
 
-        // Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // ================================
+        // SCROLL PROGRESS BAR
+        // ================================
+        const progressBar = document.querySelector('.scroll-progress-bar');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.pageYOffset;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
         });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
+        // ================================
+        // PARALLAX HERO
+        // ================================
+        const heroBg = document.getElementById('hero-bg');
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (scrolled < window.innerHeight) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+        // ================================
+        // SCROLL INDICATOR
+        // ================================
+        const scrollIndicator = document.getElementById('scroll-indicator');
+
+        scrollIndicator.addEventListener('click', () => {
+            document.getElementById('story').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 200) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.pointerEvents = 'auto';
+            }
+        });
+
+        // ================================
+        // SWIPEABLE STORY CARDS
+        // ================================
+        const storyCards = document.querySelectorAll('.story-card');
+        const storyDots = document.querySelectorAll('.story-progress .dot');
+        let currentStoryIndex = 0;
+        let startX = 0;
+        let isDragging = false;
+
+        const storyContainer = document.getElementById('story-cards');
+
+        storyContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        storyContainer.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && currentStoryIndex < storyCards.length - 1) {
+                    // Swipe left - next card
+                    currentStoryIndex++;
+                } else if (diff < 0 && currentStoryIndex > 0) {
+                    // Swipe right - previous card
+                    currentStoryIndex--;
+                }
+                updateStoryCards();
+            }
+
+            isDragging = false;
+        });
+
+        function updateStoryCards() {
+            storyCards.forEach((card, index) => {
+                card.classList.remove('active', 'prev', 'next');
+
+                if (index === currentStoryIndex) {
+                    card.classList.add('active');
+                } else if (index === currentStoryIndex - 1) {
+                    card.classList.add('prev');
+                } else if (index === currentStoryIndex + 1) {
+                    card.classList.add('next');
                 }
             });
-        });
 
-        // Nav scroll effect
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+            storyDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentStoryIndex);
+            });
+        }
 
-        // Intersection Observer for fade-in animations
+        // ================================
+        // INTERSECTION OBSERVER
+        // ================================
         const observerOptions = {
             threshold: 0.2,
             rootMargin: '0px 0px -50px 0px'
@@ -1825,74 +2176,71 @@
             });
         }, observerOptions);
 
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in, .about-card, .brand-card').forEach(el => {
+        // Observe all animated elements
+        document.querySelectorAll('.section-header-mobile, .timeline-item-mobile, .stat-card-mobile').forEach(el => {
             observer.observe(el);
         });
 
-        // Parallax effect on hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled < window.innerHeight) {
-                hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
-            }
+        // ================================
+        // COUNTER ANIMATION
+        // ================================
+        function animateCounter(element, target, suffix = '', duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString() + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString() + suffix;
+                }
+            }, 16);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const valueElement = entry.target.querySelector('.stat-number-mobile');
+                    if (valueElement && !valueElement.classList.contains('counted')) {
+                        valueElement.classList.add('counted');
+                        const target = parseInt(valueElement.getAttribute('data-count'));
+                        const suffix = entry.target.querySelector('.stat-label-mobile').textContent.includes('Km') ? '+' : '';
+                        animateCounter(valueElement, target, suffix);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card-mobile').forEach(card => {
+            statsObserver.observe(card);
         });
 
-        // CountUp.js animations for statistics
-        window.addEventListener('load', () => {
-            // Followers count animation
-            const followersOptions = {
-                useEasing: true,
-                useGrouping: true,
-                separator: ',',
-                decimal: '.'
-            };
-            const followersCount = new CountUp('followers-count', 0, 208000, 0, 2.5, followersOptions);
-            if (!followersCount.error) {
-                followersCount.start();
-            } else {
-                console.error(followersCount.error);
-            }
+        // ================================
+        // FLIPPABLE BIKE CARDS
+        // ================================
+        document.querySelectorAll('.flip-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const card = btn.closest('.bike-card-mobile');
+                card.classList.toggle('flipped');
+            });
+        });
 
-            // Engagement rate animation
-            const engagementOptions = {
-                useEasing: true,
-                useGrouping: false,
-                decimal: '.'
-            };
-            const engagementRate = new CountUp('engagement-rate', 0, 9, 1, 2.5, engagementOptions);
-            if (!engagementRate.error) {
-                engagementRate.start();
-            } else {
-                console.error(engagementRate.error);
-            }
+        // Bike carousel scroll indicator
+        const bikesCarousel = document.querySelector('.bikes-carousel');
+        const carouselDots = document.querySelectorAll('.carousel-dots .dot');
 
-            // Monthly reach animation
-            const reachOptions = {
-                useEasing: true,
-                useGrouping: true,
-                separator: ',',
-                decimal: '.'
-            };
-            const monthlyReach = new CountUp('monthly-reach', 0, 500000, 0, 2.5, reachOptions);
-            if (!monthlyReach.error) {
-                monthlyReach.start();
-            } else {
-                console.error(monthlyReach.error);
-            }
+        bikesCarousel.addEventListener('scroll', () => {
+            const scrollLeft = bikesCarousel.scrollLeft;
+            const cardWidth = 296; // 280px + 16px gap
+            const currentIndex = Math.round(scrollLeft / cardWidth);
 
-            // Female audience animation
-            const audienceOptions = {
-                useEasing: true,
-                useGrouping: false
-            };
-            const femaleAudience = new CountUp('female-audience', 0, 85, 0, 2.5, audienceOptions);
-            if (!femaleAudience.error) {
-                femaleAudience.start();
-            } else {
-                console.error(femaleAudience.error);
-            }
+            carouselDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
         });
     </script>
 </body>
