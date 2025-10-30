@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luh Pérez | Motociclista • Aventurera • Creadora</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Luh Pérez - Motociclista profesional de Colombia. Creadora de contenido sobre aventuras en moto, dirt bikes y empoderamiento femenino. 208K+ seguidores comprometidos.">
+    <meta name="keywords" content="Luh Pérez, motociclista, Colombia, dirt bike, aventura, creadora de contenido, influencer, motorcycles">
+    <meta name="author" content="Luh Pérez">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Luh Pérez | Motociclista • Aventurera • Creadora">
+    <meta property="og:description" content="Motociclista profesional de Colombia. Aventuras en moto y empoderamiento femenino.">
+    <meta property="og:url" content="https://luhperez.com">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luh Pérez | Motociclista • Aventurera • Creadora">
+    <meta name="twitter:description" content="Motociclista profesional de Colombia. Aventuras en moto y empoderamiento femenino.">
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Modern Minimalist Palette */
+            --primary-black: #000000;
+            --off-white: #fafafa;
+            --pure-white: #ffffff;
+            --light-gray: #e5e5e5;
+            --medium-gray: #999999;
+            --dark-gray: #1a1a1a;
+            --text-primary: #0a0a0a;
+            --text-secondary: #666666;
+
+            /* New Accent Colors for Sponsor-Focused Design */
+            --accent-primary: #FF6B35;    /* Energetic orange (motorcycle vibes) */
+            --accent-secondary: #00D9FF;  /* Electric cyan (adventure/tech) */
+
+            /* Data Visualization Colors */
+            --success-green: #00C853;
+            --warning-amber: #FFB300;
+
+            /* Glassmorphism Effects */
+            --glass-white: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-dark: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--off-white);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography - Headlines use Poppins */
+        h1, h2, h3, h4, h5, h6, .logo, .section-title, .card-title {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--primary-black);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-black);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-black);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            flex-direction: column;
+            padding: 100px 40px 40px;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            letter-spacing: -0.5px;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--accent-primary);
+            padding-left: 10px;
+        }
+
+        /* Touch Optimization */
+        @media (hover: none) and (pointer: coarse) {
+            /* Remove hover effects on touch devices */
+            .dashboard-stat:hover {
+                transform: none;
+                padding-left: 0;
+            }
+
+            /* Optimize touch targets */
+            .btn {
+                min-height: 48px;
+                touch-action: manipulation;
+            }
+
+            .social-link {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+                touch-action: manipulation;
+            }
+
+            /* Active states for touch */
+            .btn:active {
+                transform: scale(0.95);
+            }
+
+            .social-link:active {
+                transform: scale(0.9);
+            }
+
+            .dashboard-stat:active {
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        /* Profile Picture Section - Mobile First */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        @media (min-width: 769px) {
+            .profile-section {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .profile-picture-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-picture {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                        0 0 0 12px rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (min-width: 769px) {
+            .profile-picture {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 48px rgba(255, 107, 53, 0.4),
+                        0 0 0 12px rgba(255, 107, 53, 0.2);
+        }
+
+        /* Animated ring around profile picture */
+        .profile-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            border-top-color: var(--accent-primary);
+            border-right-color: var(--accent-secondary);
+            animation: spin 3s linear infinite;
+            z-index: 1;
+        }
+
+        @media (min-width: 769px) {
+            .profile-ring {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .profile-badges {
+            display: none; /* Hide badges on mobile */
+        }
+
+        @media (min-width: 769px) {
+            .profile-badges {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+
+        .profile-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .profile-badge:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(5px);
+        }
+
+        .profile-badge-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section - Mobile First */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+                        url('https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/500632301_742633224950250_8697375964493088075_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=EpSx9GEC4QUQ7kNvwGq9xoA&_nc_oc=Adn3T3k3TvXf4TE0qaPN3TezGnOyfl1Fo9emUS6WmzZeikhsZQodqHurf7H0kgqkdp0&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=jBx3ZGaZHFIgRCcr_saFTg&oh=00_Afe-rxSkskceCpaVAPzHhNjL-1evFOfZTnf5E1RFO3bEKA&oe=69089168') center/cover no-repeat fixed;
+            padding: 6rem 2rem 3rem;
+            color: var(--pure-white);
+        }
+
+        @media (min-width: 769px) {
+            .hero {
+                padding: 8rem 3rem 4rem;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        @media (min-width: 769px) {
+            .hero-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 6rem;
+            }
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        @media (min-width: 769px) {
+            .hero-label {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+            }
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+            letter-spacing: -2px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+        }
+
+        @media (min-width: 769px) {
+            .hero h1 {
+                font-size: clamp(3rem, 7vw, 6rem);
+                letter-spacing: -3px;
+                margin-bottom: 1.5rem;
+                text-align: left;
+            }
+
+            .hero h2 {
+                font-size: clamp(1.8rem, 4vw, 3rem);
+                font-weight: 300;
+                letter-spacing: -1px;
+                margin-bottom: 2rem;
+                text-align: left;
+            }
+        }
+
+        .hero-description {
+            display: none; /* Hide long description on mobile */
+        }
+
+        .hero-description-short {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            text-align: center;
+        }
+
+        @media (min-width: 769px) {
+            .hero-description {
+                display: block;
+                font-size: 1.1rem;
+                line-height: 1.8;
+                margin-bottom: 3rem;
+                max-width: 600px;
+            }
+
+            .hero-description-short {
+                display: none;
+            }
+        }
+
+        .hero-stats {
+            display: none; /* Hide on mobile, replaced with compact version */
+        }
+
+        @media (min-width: 769px) {
+            .hero-stats {
+                display: flex;
+                gap: 4rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .stat-item {
+            border-left: 2px solid rgba(255, 255, 255, 0.3);
+            padding-left: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 769px) {
+            .cta-buttons {
+                flex-direction: row;
+                align-items: flex-start;
+                margin-top: 0;
+            }
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            border-radius: 8px;
+            display: inline-block;
+            text-align: center;
+            min-width: 200px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        @media (min-width: 769px) {
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+                letter-spacing: -0.2px;
+                border-radius: 0;
+                min-width: auto;
+                width: auto;
+                max-width: none;
+            }
+        }
+
+        .btn-primary {
+            background: var(--pure-white);
+            color: var(--primary-black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-primary);
+            color: var(--pure-white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--pure-white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--pure-white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile-First: Compact Hero Stats */
+        .hero-stat-compact {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero-stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -3px;
+            background: linear-gradient(135deg, var(--pure-white), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Hero Stats Dashboard - Hidden on Mobile, Shown on Desktop */
+        .hero-stats-dashboard {
+            position: relative;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            display: none; /* Hidden on mobile by default */
+        }
+
+        @media (min-width: 769px) {
+            .hero-stats-dashboard {
+                display: block;
+            }
+            .hero-stat-compact {
+                display: none;
+            }
+        }
+
+        /* ===== NEW 2025 METRICS DASHBOARD ===== */
+        .stats-card {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        /* Header Section */
+        .stats-card-header {
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #FFFFFF, var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stats-card-subtitle {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 400;
+        }
+
+        /* Modern Metric Cards Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .metric-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--pure-white);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Progress Circle */
+        .progress-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .progress-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        .progress-ring {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            flex-shrink: 0;
+        }
+
+        .progress-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-circle {
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .progress-ring-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 6;
+        }
+
+        .progress-ring-fill {
+            fill: none;
+            stroke: url(#gradient);
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-dasharray: 204;
+            stroke-dashoffset: 0;
+        }
+
+        .progress-content {
+            flex: 1;
+        }
+
+        .progress-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+            color: var(--pure-white);
+        }
+
+        .progress-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section-mini-title {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .achievement-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .achievement-badge:hover {
+            background: rgba(255, 107, 53, 0.1);
+            border-color: var(--accent-primary);
+            transform: scale(1.03);
+        }
+
+        .achievement-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .achievement-info {
+            flex: 1;
+        }
+
+        .achievement-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+            color: var(--pure-white);
+        }
+
+        .achievement-name {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.2;
+            font-weight: 500;
+        }
+
+        /* Top Bikes Section */
+        .top-bikes-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .bike-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .bike-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bike-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent-secondary);
+            transform: translateX(5px);
+        }
+
+        .bike-rank {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .bike-name {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--pure-white);
+        }
+
+        .bike-emoji {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Status Badges */
+        .status-badges {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(0, 200, 83, 0.15);
+            border: 1px solid rgba(0, 200, 83, 0.3);
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .status-badge:hover {
+            background: rgba(0, 200, 83, 0.25);
+            transform: scale(1.05);
+        }
+
+        .status-badge.active-badge {
+            background: rgba(0, 217, 255, 0.15);
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
+        .status-badge.active-badge:hover {
+            background: rgba(0, 217, 255, 0.25);
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 3rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 6rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--pure-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .about-card {
+            padding: 3rem 2rem;
+            border-top: 2px solid var(--primary-black);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .about-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Brands Section */
+        .brands {
+            background: var(--off-white);
+        }
+
+        .brands-intro {
+            max-width: 800px;
+            margin-bottom: 4rem;
+        }
+
+        /* Carousel Container */
+        .brands-carousel-wrapper {
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .brands-carousel-wrapper::before,
+        .brands-carousel-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .brands-carousel-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--surface-white), transparent);
+        }
+
+        .brands-carousel-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--surface-white), transparent);
+        }
+
+        .brands-carousel {
+            display: flex;
+            gap: 3rem;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .brands-carousel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .brand-card {
+            background: var(--pure-white);
+            padding: 2.5rem 3rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            height: 100px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            flex-shrink: 0;
+            border: 1px solid var(--light-gray);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary-black);
+        }
+
+        .brand-logo img {
+            max-width: 140px;
+            max-height: 70px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(0.7);
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .brand-card:hover .brand-logo img {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.1);
+        }
+
+        /* Social Section */
+        .social {
+            background: var(--primary-black);
+            color: var(--pure-white);
+            text-align: center;
+        }
+
+        .social .section-label {
+            color: var(--medium-gray);
+        }
+
+        .social .section-title {
+            color: var(--pure-white);
+        }
+
+        .social .section-subtitle {
+            color: var(--medium-gray);
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--pure-white);
+            text-decoration: none;
+            font-size: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--pure-white);
+            color: var(--primary-black);
+            border-color: var(--pure-white);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            padding: 3rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .badge-verified,
+            .badge-active {
+                animation: none !important;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .profile-picture {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-ring {
+                width: 170px;
+                height: 170px;
+            }
+
+            .profile-badges {
+                align-items: center;
+            }
+
+            .nav-container {
+                padding: 1.5rem 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-stats-dashboard {
+                order: 1;
+            }
+
+            .stats-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .metric-value {
+                font-size: 1.8rem;
+            }
+
+            .progress-value {
+                font-size: 1.5rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            section {
+                padding: 5rem 2rem;
+            }
+
+            .section-header {
+                margin-bottom: 4rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brands-carousel-wrapper::before,
+            .brands-carousel-wrapper::after {
+                width: 50px;
+            }
+
+            .brand-card {
+                min-width: 150px;
+                padding: 2rem 2.5rem;
+            }
+
+            .brand-logo img {
+                max-width: 120px;
+                max-height: 60px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .stat-item {
+                border-left: none;
+                border-top: 2px solid rgba(255, 255, 255, 0.3);
+                padding-left: 0;
+                padding-top: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="nav-container">
+            <div class="logo">LUH PÉREZ</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Historia</a></li>
+                <li><a href="#brands">Marcas</a></li>
+                <li><a href="#social">Contacto</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">Inicio</a>
+        <a href="#about">Historia</a>
+        <a href="#brands">Marcas</a>
+        <a href="#social">Contacto</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Profile Picture Section -->
+                <div class="profile-section">
+                    <div class="profile-picture-container">
+                        <div class="profile-ring"></div>
+                        <img src="https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/494701268_742633964950176_5301665088945580637_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=soScYVCUDUcQ7kNvwGNU_Ke&_nc_oc=AdkgAXysKrKV6SJn9_oTk3XSvXIczWFBqgKy-uHPrwq8nRYSyl1obL0wUx_e261wC_U&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=I2UgIQUqBWvtKSPjPuiGXQ&oh=00_Afd056tv83Dkulo0obgLciRhHml_dD8U35ju3auz3BdnWQ&oe=69088ED9" 
+                             alt="Luh Pérez - Motociclista Profesional" 
+                             class="profile-picture"
+                             loading="eager">
+                    </div>
+                    <div class="profile-badges">
+                        <div class="profile-badge">
+                            <span class="profile-badge-icon">✓</span>
+                            <span>Creadora Verificada</span>
+                        </div>
+                        <div class="profile-badge">
+                            <span class="profile-badge-icon">🏍️</span>
+                            <span>Motociclista Pro</span>
+                        </div>
+                        <div class="profile-badge">
+                            <span class="profile-badge-icon">📊</span>
+                            <span>208K+ Seguidores</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-label">Pasión sobre Ruedas</div>
+                <h1>Luh Pérez</h1>
+                <h2>Motociclista & Aventurera</h2>
+
+                <!-- Mobile: Short Description -->
+                <p class="hero-description-short">
+                    Creadora de contenido apasionada por las motos 🏍️<br>
+                    Inspirando a miles en Colombia y LATAM
+                </p>
+
+                <!-- Mobile: Compact Hero Stat -->
+                <div class="hero-stat-compact">
+                    <div class="hero-stat-number">208K+</div>
+                    <div class="hero-stat-label">Seguidores Comprometidos</div>
+                </div>
+
+                <!-- Desktop: Full Description (hidden on mobile) -->
+                <p class="hero-description">
+                    Arriesgada, atrevida y aventurera. Nacida en Bogotá, Colombia,
+                    estudiante de Psicología y apasionada por las dos ruedas.
+                    Mi día se hace extraordinario cuando monto mi moto y conquisto
+                    cada camino con valentía.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">208K+</div>
+                        <div class="stat-label">Seguidores</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Pasión</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Aventuras</div>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#social" class="btn btn-primary">Conectar</a>
+                    <a href="#about" class="btn btn-secondary">Conocer Más</a>
+                </div>
+            </div>
+
+            <div class="hero-stats-dashboard">
+                <div class="stats-card">
+                    <div class="stats-card-header">
+                        <h3 class="stats-card-title">Mi Impacto</h3>
+                        <p class="stats-card-subtitle">Datos en tiempo real</p>
+                    </div>
+
+                    <!-- Key Metrics Grid -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value" id="followers-count">208K</div>
+                            <div class="metric-label">Seguidores</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="monthly-reach">500K</div>
+                            <div class="metric-label">Alcance Mensual</div>
+                        </div>
+                    </div>
+
+                    <!-- Engagement Progress Circle -->
+                    <div class="progress-card">
+                        <div class="progress-ring">
+                            <svg width="70" height="70">
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-ring-bg" cx="35" cy="35" r="32.5"/>
+                                <circle class="progress-ring-fill" cx="35" cy="35" r="32.5"
+                                        style="stroke-dashoffset: 45"/>
+                            </svg>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1rem; font-weight: 700;">9%</div>
+                        </div>
+                        <div class="progress-content">
+                            <div class="progress-value">Engagement</div>
+                            <div class="progress-label">85% Audiencia Femenina</div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements Section -->
+                    <div class="achievements-section">
+                        <div class="section-mini-title">Mi Jornada</div>
+                        <div class="achievements-grid">
+                            <div class="achievement-badge">
+                                <div class="achievement-icon">🛣️</div>
+                                <div class="achievement-info">
+                                    <div class="achievement-value">15K+</div>
+                                    <div class="achievement-name">Km Recorridos</div>
+                                </div>
+                            </div>
+                            <div class="achievement-badge">
+                                <div class="achievement-icon">📍</div>
+                                <div class="achievement-info">
+                                    <div class="achievement-value">12</div>
+                                    <div class="achievement-name">Departamentos</div>
+                                </div>
+                            </div>
+                            <div class="achievement-badge">
+                                <div class="achievement-icon">🎬</div>
+                                <div class="achievement-info">
+                                    <div class="achievement-value">933</div>
+                                    <div class="achievement-name">Posts</div>
+                                </div>
+                            </div>
+                            <div class="achievement-badge">
+                                <div class="achievement-icon">⏱️</div>
+                                <div class="achievement-info">
+                                    <div class="achievement-value">2+</div>
+                                    <div class="achievement-name">Años Activa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Bikes Section -->
+                    <div class="top-bikes-section">
+                        <div class="section-mini-title">Mis Motos Favoritas</div>
+                        <div class="bike-list">
+                            <div class="bike-item">
+                                <div class="bike-rank">1</div>
+                                <div class="bike-name">Kawasaki KLX 150</div>
+                                <div class="bike-emoji">🏍️</div>
+                            </div>
+                            <div class="bike-item">
+                                <div class="bike-rank">2</div>
+                                <div class="bike-name">Yamaha WR 250F</div>
+                                <div class="bike-emoji">⚡</div>
+                            </div>
+                            <div class="bike-item">
+                                <div class="bike-rank">3</div>
+                                <div class="bike-name">KTM 450 SX-F</div>
+                                <div class="bike-emoji">🔥</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Badges -->
+                    <div class="status-badges">
+                        <div class="status-badge">✓ Verificada</div>
+                        <div class="status-badge active-badge">🇨🇴 Colombia 75%</div>
+                        <div class="status-badge">🌎 LATAM 20%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">¿Quién Soy?</div>
+                <h2 class="section-title">Mi Historia</h2>
+                <p class="section-subtitle">
+                    Mujer independiente y empoderada que no busca la aprobación de nadie. 
+                    He aprendido de los errores y las caídas. Para mí no existen límites, 
+                    porque los límites se imponen desde la mente.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="card-icon">🏍️</div>
+                    <h3 class="card-title">Dirt Bikes</h3>
+                    <p class="card-text">
+                        Amante de las motos de tierra, conquistando terrenos difíciles
+                        y sintiendo la adrenalina pura en cada curva. Las dirt bikes
+                        no son solo mi pasión, son mi forma de vida.
+                    </p>
+                </div>
+
+                <div class="about-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="card-icon">🌎</div>
+                    <h3 class="card-title">Aventurera</h3>
+                    <p class="card-text">
+                        Mi sueño es conocer toda Colombia y viajar por el mundo.
+                        Cada ruta es una nueva historia, cada camino una lección de
+                        valentía. Amo la naturaleza, la paz y la libertad del camino.
+                    </p>
+                </div>
+
+                <div class="about-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">Creadora de Contenido</h3>
+                    <p class="card-text">
+                        Comparto mi pasión en redes sociales, inspirando a otras
+                        mujeres a perseguir sus sueños. Construyendo una comunidad
+                        de moteros que aman la aventura tanto como yo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands" id="brands">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aliados Estratégicos</div>
+                <h2 class="section-title">Marcas que Confían en Mí</h2>
+                <div class="brands-intro">
+                    <p class="section-subtitle">
+                        Respaldada por las mejores marcas de motocicletas de Colombia y el mundo. 
+                        Estas son las empresas que creen en mi pasión y mi contenido.
+                    </p>
+                </div>
+            </div>
+
+            <div class="brands-carousel-wrapper">
+                <div class="brands-carousel">
+                    <!-- First set of logos -->
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Kawasaki-logo.svg" alt="Kawasaki Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Yamaha_Motor_Logo_%28full%29.svg" alt="Yamaha Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Suzuki_logo_2025_%28vertical%29.svg" alt="Suzuki Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/KTM-Logo.svg" alt="KTM Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://cdn.brandfetch.io/id3_agxFfR/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1712594842066" alt="Auteco Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Akt_logo.svg" alt="AKT Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Kawasaki-logo.svg" alt="Kawasaki Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Yamaha_Motor_Logo_%28full%29.svg" alt="Yamaha Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Suzuki_logo_2025_%28vertical%29.svg" alt="Suzuki Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/KTM-Logo.svg" alt="KTM Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://auteco.vtexassets.com/assets/vtex.file-manager-graphql/images/842550b6-d0da-4797-aadb-dc4e0493dc91___f559a76f2dffdf25985c6b99ec59ffef.svg" alt="Auteco Logo" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Akt_logo.svg" alt="AKT Logo" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social" id="social">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Conectemos</div>
+                <h2 class="section-title">Sígueme</h2>
+                <p class="section-subtitle">
+                    Únete a mi comunidad y vive la pasión por las motos. 
+                    Contenido exclusivo, tips, aventuras y mucho más.
+                </p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/luhperez/" class="social-link" target="_blank" rel="noopener" title="Instagram" data-aos="fade-up" data-aos-duration="600">📷</a>
+                <a href="https://www.facebook.com/luh608/" class="social-link" target="_blank" rel="noopener" title="Facebook" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">📘</a>
+                <a href="#" class="social-link" title="TikTok" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">🎵</a>
+                <a href="#" class="social-link" title="YouTube" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">▶️</a>
+                <a href="#" class="social-link" title="Email" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">✉️</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Luh Pérez. Todos los derechos reservados.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.6;">Diseñado con pasión para los amantes de las motos</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- CountUp.js for animated numbers -->
+    <script src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .about-card, .brand-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect on hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+            }
+        });
+
+        // CountUp.js animations for statistics
+        window.addEventListener('load', () => {
+            // Followers count animation
+            const followersOptions = {
+                useEasing: true,
+                useGrouping: true,
+                separator: ',',
+                decimal: '.'
+            };
+            const followersCount = new CountUp('followers-count', 0, 208000, 0, 2.5, followersOptions);
+            if (!followersCount.error) {
+                followersCount.start();
+            } else {
+                console.error(followersCount.error);
+            }
+
+            // Engagement rate animation
+            const engagementOptions = {
+                useEasing: true,
+                useGrouping: false,
+                decimal: '.'
+            };
+            const engagementRate = new CountUp('engagement-rate', 0, 9, 1, 2.5, engagementOptions);
+            if (!engagementRate.error) {
+                engagementRate.start();
+            } else {
+                console.error(engagementRate.error);
+            }
+
+            // Monthly reach animation
+            const reachOptions = {
+                useEasing: true,
+                useGrouping: true,
+                separator: ',',
+                decimal: '.'
+            };
+            const monthlyReach = new CountUp('monthly-reach', 0, 500000, 0, 2.5, reachOptions);
+            if (!monthlyReach.error) {
+                monthlyReach.start();
+            } else {
+                console.error(monthlyReach.error);
+            }
+
+            // Female audience animation
+            const audienceOptions = {
+                useEasing: true,
+                useGrouping: false
+            };
+            const femaleAudience = new CountUp('female-audience', 0, 85, 0, 2.5, audienceOptions);
+            if (!femaleAudience.error) {
+                femaleAudience.start();
+            } else {
+                console.error(femaleAudience.error);
+            }
+        });
+    </script>
+</body>
+</html>
