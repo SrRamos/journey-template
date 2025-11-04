@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Luh Pérez | El Viaje de una Motociclista</title>
+    <title>Melissa Rico | Creadora de Contenido • Motociclista • Gamer</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="El viaje de Luh Pérez - Motociclista, aventurera y creadora de contenido. Descubre mi historia sobre ruedas.">
-    <meta name="theme-color" content="#FF6B35">
+    <meta name="description" content="172K en TikTok, 112K en Instagram. Creadora de contenido de Medellín. Gaming, motos, comedy y aventuras. BMW F750 GS rider. Parte de @endurowomen_">
+    <meta name="keywords" content="melissa rico, melirico, content creator, motociclista colombia, gamer, tiktok creator, BMW F750 GS, enduro women, medellin">
+    <meta name="author" content="Melissa Rico">
+    <meta name="theme-color" content="#9333EA">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://melissarico.com">
+    <meta property="og:title" content="Melissa Rico | Creadora de Contenido • Motociclista • Gamer">
+    <meta property="og:description" content="172K en TikTok, 112K en Instagram. Creadora de contenido de Medellín. Gaming, motos, comedy y aventuras. BMW F750 GS rider.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/9333EA/ffffff?text=Melissa+Rico">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://melissarico.com">
+    <meta property="twitter:title" content="Melissa Rico | Creadora de Contenido • Motociclista • Gamer">
+    <meta property="twitter:description" content="172K en TikTok, 112K en Instagram. Creadora de contenido de Medellín. Gaming, motos, comedy y aventuras.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630/9333EA/ffffff?text=Melissa+Rico">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Configuration Files -->
+    <script src="config/themes.js"></script>
+    <script src="config/melissa-rico-config.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,8 +147,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                        url('https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/500632301_742633224950250_8697375964493088075_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=EpSx9GEC4QUQ7kNvwGq9xoA&_nc_oc=Adn3T3k3TvXf4TE0qaPN3TezGnOyfl1Fo9emUS6WmzZeikhsZQodqHurf7H0kgqkdp0&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=jBx3ZGaZHFIgRCcr_saFTg&oh=00_Afe-rxSkskceCpaVAPzHhNjL-1evFOfZTnf5E1RFO3bEKA&oe=69089168') center/cover no-repeat;
+            /* Background will be set by JavaScript from config */
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(236, 72, 153, 0.6));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             will-change: transform;
         }
 
@@ -1776,17 +1804,19 @@
             <div class="hero-left">
                 <div class="profile-container">
                     <div class="profile-ring"></div>
-                    <img src="https://scontent.fbog3-1.fna.fbcdn.net/v/t39.30808-6/494701268_742633964950176_5301665088945580637_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=soScYVCUDUcQ7kNvwGNU_Ke&_nc_oc=AdkgAXysKrKV6SJn9_oTk3XSvXIczWFBqgKy-uHPrwq8nRYSyl1obL0wUx_e261wC_U&_nc_zt=23&_nc_ht=scontent.fbog3-1.fna&_nc_gid=I2UgIQUqBWvtKSPjPuiGXQ&oh=00_Afd056tv83Dkulo0obgLciRhHml_dD8U35ju3auz3BdnWQ&oe=69088ED9"
-                         alt="Luh Pérez"
-                         class="profile-img">
+                    <img src=""
+                         alt="Profile"
+                         class="profile-img"
+                         loading="eager"
+                         id="profile-image">
                 </div>
 
                 <h1 class="hero-title">
-                    <span class="word">Luh</span>
-                    <span class="word">Pérez</span>
+                    <span class="word">Meli</span>
+                    <span class="word">Rico</span>
                 </h1>
 
-                <p class="hero-subtitle">Motociclista • Aventurera</p>
+                <p class="hero-subtitle">Creadora de Contenido • Motociclista • Gamer</p>
             </div>
 
             <div class="hero-stats-compact">
@@ -1808,10 +1838,10 @@
                             <div class="stat-icon-ring">
                                 <i data-lucide="users"></i>
                             </div>
-                            <div class="stat-value-ring">208K</div>
+                            <div class="stat-value-ring">5M</div>
                         </div>
                     </div>
-                    <div class="stat-label-ring">Seguidores</div>
+                    <div class="stat-label-ring">TikTok<br>Followers</div>
                 </div>
 
                 <!-- Stat 2: Kilometers -->
@@ -1826,10 +1856,10 @@
                             <div class="stat-icon-ring">
                                 <i data-lucide="map"></i>
                             </div>
-                            <div class="stat-value-ring">15K+</div>
+                            <div class="stat-value-ring">112K</div>
                         </div>
                     </div>
-                    <div class="stat-label-ring">Kilómetros</div>
+                    <div class="stat-label-ring">Instagram<br>Followers</div>
                 </div>
 
                 <!-- Stat 3: Female Audience -->
@@ -1844,10 +1874,10 @@
                             <div class="stat-icon-ring">
                                 <i data-lucide="heart"></i>
                             </div>
-                            <div class="stat-value-ring">85%</div>
+                            <div class="stat-value-ring">BMW</div>
                         </div>
                     </div>
-                    <div class="stat-label-ring">Audiencia<br>Femenina</div>
+                    <div class="stat-label-ring">F750 GS</div>
                 </div>
             </div>
         </div>
@@ -1870,34 +1900,34 @@
         <div class="story-cards-container" id="story-cards">
             <div class="story-card active" data-index="0">
                 <div class="card-icon">
-                    <i data-lucide="bike"></i>
+                    <i data-lucide="gamepad-2"></i>
                 </div>
-                <h3>Mi Primera Moto</h3>
-                <p>Kawasaki KLX 150 - donde todo comenzó. Mi primera aventura sobre dos ruedas.</p>
+                <h3>Multi-Talento</h3>
+                <p>Gamer, creadora de contenido y motociclista. 172K en TikTok y 112K en Instagram compartiendo mi pasión por la diversión y las aventuras.</p>
             </div>
 
             <div class="story-card next" data-index="1">
                 <div class="card-icon">
-                    <i data-lucide="mountain"></i>
+                    <i data-lucide="bike"></i>
                 </div>
-                <h3>15K Kilómetros</h3>
-                <p>Recorriendo cada rincón de Colombia, conquistando montañas y caminos.</p>
+                <h3>BMW F750 GS</h3>
+                <p>Mi compañera de aventuras. Recorriendo Colombia en una bestia alemana lista para cualquier terreno.</p>
             </div>
 
             <div class="story-card" data-index="2">
                 <div class="card-icon">
-                    <i data-lucide="users"></i>
+                    <i data-lucide="sparkles"></i>
                 </div>
-                <h3>208K Seguidores</h3>
-                <p>Una comunidad increíble que inspiro cada día con mi pasión.</p>
+                <h3>Enduro Women</h3>
+                <p>Parte de la comunidad @endurowomen_, inspirando a más mujeres a conquistar el mundo de las motos.</p>
             </div>
 
             <div class="story-card" data-index="3">
                 <div class="card-icon">
                     <i data-lucide="heart"></i>
                 </div>
-                <h3>Mi Propósito</h3>
-                <p>Inspirar a otras mujeres a romper límites y conquistar sus sueños.</p>
+                <h3>Conectando</h3>
+                <p>De Medellín para el mundo. Creando contenido que hace reír, inspira y entretiene cada día.</p>
             </div>
         </div>
 
@@ -1920,12 +1950,38 @@
 
             <div class="timeline-item-mobile">
                 <div class="timeline-content">
-                    <div class="timeline-year-mobile">2022</div>
-                    <h3 class="timeline-title-mobile">El Comienzo</h3>
+                    <div class="timeline-year-mobile">2019</div>
+                    <h3 class="timeline-title-mobile">El Inicio Digital</h3>
                     <p class="timeline-description-mobile">
-                        Todo empezó con una Kawasaki KLX 150. Mi primera moto, mi primera gran aventura.
+                        Comencé creando contenido en redes sociales, combinando mi amor por el gaming y el entretenimiento.
                     </p>
-                    <span class="timeline-stat-mobile">Nivel: Principiante</span>
+                    <span class="timeline-stat-mobile">Primeros Pasos</span>
+                </div>
+                <div class="timeline-dot-mobile"></div>
+                <div class="timeline-empty"></div>
+            </div>
+
+            <div class="timeline-item-mobile">
+                <div class="timeline-empty"></div>
+                <div class="timeline-dot-mobile"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year-mobile">2021</div>
+                    <h3 class="timeline-title-mobile">Descubriendo las Motos</h3>
+                    <p class="timeline-description-mobile">
+                        Mi primera moto abrió un mundo nuevo. Las dos ruedas se convirtieron en parte esencial de mi vida.
+                    </p>
+                    <span class="timeline-stat-mobile">Nueva Pasión</span>
+                </div>
+            </div>
+
+            <div class="timeline-item-mobile">
+                <div class="timeline-content">
+                    <div class="timeline-year-mobile">2022</div>
+                    <h3 class="timeline-title-mobile">BMW F750 GS</h3>
+                    <p class="timeline-description-mobile">
+                        Di el salto a una adventure bike de verdad. 850cc de pura emoción lista para cualquier aventura.
+                    </p>
+                    <span class="timeline-stat-mobile">Level Up</span>
                 </div>
                 <div class="timeline-dot-mobile"></div>
                 <div class="timeline-empty"></div>
@@ -1936,22 +1992,22 @@
                 <div class="timeline-dot-mobile"></div>
                 <div class="timeline-content">
                     <div class="timeline-year-mobile">2023</div>
-                    <h3 class="timeline-title-mobile">Conquistando Colombia</h3>
+                    <h3 class="timeline-title-mobile">Enduro Women</h3>
                     <p class="timeline-description-mobile">
-                        8,500 km explorando 12 departamentos. Desde montañas hasta llanos.
+                        Me uní a la increíble comunidad de @endurowomen_, compartiendo aventuras con mujeres moteras.
                     </p>
-                    <span class="timeline-stat-mobile">12 Departamentos</span>
+                    <span class="timeline-stat-mobile">112K Seguidores IG</span>
                 </div>
             </div>
 
             <div class="timeline-item-mobile">
                 <div class="timeline-content">
                     <div class="timeline-year-mobile">2024</div>
-                    <h3 class="timeline-title-mobile">Nivel Pro</h3>
+                    <h3 class="timeline-title-mobile">Viral en TikTok</h3>
                     <p class="timeline-description-mobile">
-                        Yamaha WR 250F y KTM 450 SX-F. Dominando las dirt bikes más potentes.
+                        Mi contenido explotó en TikTok. Challenges, comedy, motos y gaming llegaron a millones.
                     </p>
-                    <span class="timeline-stat-mobile">15,000+ Km Totales</span>
+                    <span class="timeline-stat-mobile">172K Seguidores TT</span>
                 </div>
                 <div class="timeline-dot-mobile"></div>
                 <div class="timeline-empty"></div>
@@ -1962,9 +2018,9 @@
                 <div class="timeline-dot-mobile"></div>
                 <div class="timeline-content">
                     <div class="timeline-year-mobile">2025</div>
-                    <h3 class="timeline-title-mobile">El Futuro</h3>
+                    <h3 class="timeline-title-mobile">Nuevos Horizontes</h3>
                     <p class="timeline-description-mobile">
-                        Mi sueño: recorrer toda Colombia y llevar mi pasión por LATAM.
+                        Expandiendo mi marca. Más contenido, más colaboraciones, más aventuras por Colombia y el mundo.
                     </p>
                     <span class="timeline-stat-mobile">Sin Límites</span>
                 </div>
@@ -1975,9 +2031,9 @@
     <!-- SECTION 4: BIKES GALLERY -->
     <section class="bikes-mobile" id="bikes">
         <div class="section-header-mobile">
-            <div class="section-label-mobile">Mis Compañeras</div>
-            <h2 class="section-title-mobile">Mis Motos</h2>
-            <p class="section-subtitle-mobile">Toca para ver detalles</p>
+            <div class="section-label-mobile">Mi Equipo</div>
+            <h2 class="section-title-mobile">Mis Herramientas</h2>
+            <p class="section-subtitle-mobile">Lo que uso para crear contenido épico</p>
         </div>
 
         <div class="bikes-carousel">
@@ -1988,16 +2044,16 @@
                         <div class="bike-icon-animated">
                             <i data-lucide="bike"></i>
                         </div>
-                        <h3>Kawasaki KLX 150</h3>
-                        <p class="bike-tag">Mi Primera Amor</p>
+                        <h3>BMW F750 GS</h3>
+                        <p class="bike-tag">Mi Bestia Alemana</p>
                         <button class="flip-btn">Ver Detalles</button>
                     </div>
                     <div class="bike-card-back">
-                        <h3>Kawasaki KLX 150</h3>
+                        <h3>BMW F750 GS</h3>
                         <ul class="bike-specs">
-                            <li><i data-lucide="gauge"></i> 150cc</li>
-                            <li><i data-lucide="zap"></i> 14HP</li>
-                            <li><i data-lucide="droplet"></i> 7L</li>
+                            <li><i data-lucide="gauge"></i> 853cc</li>
+                            <li><i data-lucide="zap"></i> 77HP</li>
+                            <li><i data-lucide="droplet"></i> 15L</li>
                         </ul>
                         <button class="flip-btn">Regresar</button>
                     </div>
@@ -2009,18 +2065,18 @@
                     <div class="bike-card-front">
                         <div class="bike-rank">2</div>
                         <div class="bike-icon-animated">
-                            <i data-lucide="zap"></i>
+                            <i data-lucide="gamepad-2"></i>
                         </div>
-                        <h3>Yamaha WR 250F</h3>
-                        <p class="bike-tag">El Salto de Calidad</p>
+                        <h3>Gaming Setup</h3>
+                        <p class="bike-tag">Creadora de Contenido</p>
                         <button class="flip-btn">Ver Detalles</button>
                     </div>
                     <div class="bike-card-back">
-                        <h3>Yamaha WR 250F</h3>
+                        <h3>Gaming Setup</h3>
                         <ul class="bike-specs">
-                            <li><i data-lucide="gauge"></i> 250cc</li>
-                            <li><i data-lucide="zap"></i> 42HP</li>
-                            <li><i data-lucide="droplet"></i> 7.5L</li>
+                            <li><i data-lucide="monitor"></i> Multi-Platform</li>
+                            <li><i data-lucide="video"></i> Full HD Stream</li>
+                            <li><i data-lucide="calendar"></i> Daily Content</li>
                         </ul>
                         <button class="flip-btn">Regresar</button>
                     </div>
@@ -2032,18 +2088,18 @@
                     <div class="bike-card-front">
                         <div class="bike-rank">3</div>
                         <div class="bike-icon-animated">
-                            <i data-lucide="flame"></i>
+                            <i data-lucide="camera"></i>
                         </div>
-                        <h3>KTM 450 SX-F</h3>
-                        <p class="bike-tag">Beast Mode</p>
+                        <h3>Camera Gear</h3>
+                        <p class="bike-tag">Producción Profesional</p>
                         <button class="flip-btn">Ver Detalles</button>
                     </div>
                     <div class="bike-card-back">
-                        <h3>KTM 450 SX-F</h3>
+                        <h3>Camera Gear</h3>
                         <ul class="bike-specs">
-                            <li><i data-lucide="gauge"></i> 450cc</li>
-                            <li><i data-lucide="zap"></i> 63HP</li>
-                            <li><i data-lucide="droplet"></i> 7L</li>
+                            <li><i data-lucide="video"></i> 4K Recording</li>
+                            <li><i data-lucide="plane"></i> DJI Drone</li>
+                            <li><i data-lucide="film"></i> Pro Editing</li>
                         </ul>
                         <button class="flip-btn">Regresar</button>
                     </div>
@@ -2119,26 +2175,26 @@
 
     <!-- STICKY CTA -->
     <div class="sticky-cta">
-        <button class="cta-btn-primary" onclick="window.open('https://www.instagram.com/luhperez/', '_blank')">
-            <i data-lucide="instagram"></i>
-            <span>Sígueme en Instagram</span>
+        <button class="cta-btn-primary" onclick="window.open('https://www.tiktok.com/@melirico_', '_blank')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+            </svg>
+            <span>Sígueme en TikTok</span>
             <span class="btn-shine"></span>
         </button>
 
         <div class="social-bubbles">
-            <a href="https://www.facebook.com/luh608/" class="social-bubble" target="_blank" aria-label="Facebook">
-                <i data-lucide="facebook"></i>
+            <a href="https://www.instagram.com/melirico_/" class="social-bubble" target="_blank" aria-label="Instagram">
+                <i data-lucide="instagram"></i>
             </a>
-            <a href="#" class="social-bubble" aria-label="YouTube">
+            <a href="https://www.youtube.com/@Melirico_" class="social-bubble" target="_blank" aria-label="YouTube">
                 <i data-lucide="youtube"></i>
             </a>
-            <a href="#" class="social-bubble" aria-label="TikTok">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-                </svg>
+            <a href="https://www.facebook.com/meliirico" class="social-bubble" target="_blank" aria-label="Facebook">
+                <i data-lucide="facebook"></i>
             </a>
-            <a href="#" class="social-bubble" aria-label="Buy Me a Coffee">
-                <i data-lucide="coffee"></i>
+            <a href="mailto:brmeligrico@gmail.com" class="social-bubble" aria-label="Email">
+                <i data-lucide="mail"></i>
             </a>
         </div>
 
@@ -2157,6 +2213,176 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
+        // ================================
+        // POPULATE PAGE FROM CONFIG
+        // ================================
+        function populateFromConfig() {
+            if (typeof CREATOR_CONFIG === 'undefined') {
+                console.error('❌ CREATOR_CONFIG not found! Make sure config file is loaded.');
+                console.log('💡 Tip: Are you using http://localhost:8080/ instead of file://?');
+                return;
+            }
+
+            const config = CREATOR_CONFIG;
+            console.log('📦 Loading config for:', config.personal.name);
+
+            try {
+                // Update document title
+                document.title = config.seo.title;
+
+                // Update meta tags
+                const updateMeta = (selector, attr, value) => {
+                    const el = document.querySelector(selector);
+                    if (el) el.setAttribute(attr, value);
+                };
+
+                updateMeta('meta[name="description"]', 'content', config.seo.description);
+                updateMeta('meta[name="keywords"]', 'content', config.seo.keywords.join(', '));
+                updateMeta('meta[property="og:title"]', 'content', config.seo.title);
+                updateMeta('meta[property="og:description"]', 'content', config.seo.description);
+                updateMeta('meta[property="og:image"]', 'content', config.seo.ogImage);
+
+                // Update profile image
+                const profileImg = document.querySelector('.profile-img');
+                if (profileImg && config.branding.profileImage) {
+                    profileImg.src = config.branding.profileImage;
+                    profileImg.alt = config.personal.name;
+                    profileImg.onerror = () => {
+                        console.error('❌ Failed to load profile image:', config.branding.profileImage);
+                        profileImg.src = 'https://via.placeholder.com/400x400/9333EA/ffffff?text=' + encodeURIComponent(config.personal.firstName);
+                    };
+                    console.log('✓ Profile image updated:', config.branding.profileImage);
+                } else {
+                    console.warn('⚠️ Profile image element not found or no image URL provided');
+                }
+
+                // Update hero background
+                const heroBg = document.getElementById('hero-bg');
+                if (heroBg && config.branding.heroBackgroundImage) {
+                    // Get the theme colors for gradient overlay
+                    const theme = THEMES[config.branding.colorScheme];
+                    const gradient = theme ? theme.gradients.overlay : 'linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(236, 72, 153, 0.6))';
+                    heroBg.style.background = `${gradient}, url('${config.branding.heroBackgroundImage}') center/cover no-repeat`;
+                    heroBg.style.backgroundSize = 'cover';
+                    heroBg.style.backgroundPosition = 'center';
+                    console.log('✓ Hero background updated:', config.branding.heroBackgroundImage);
+                } else {
+                    console.warn('⚠️ Hero background element not found or no image URL provided');
+                }
+
+                // Update name
+                const firstName = document.querySelector('.hero-title .word:nth-child(1)');
+                const lastName = document.querySelector('.hero-title .word:nth-child(2)');
+                if (firstName) firstName.textContent = config.personal.firstName;
+                if (lastName) lastName.textContent = config.personal.lastName;
+
+                // Update tagline
+                const tagline = document.querySelector('.hero-subtitle');
+                if (tagline) tagline.textContent = config.personal.tagline;
+
+                // Update hero stats
+                if (config.heroStats && config.heroStats.length >= 3) {
+                    const statContainers = document.querySelectorAll('.stat-ring-container');
+                    config.heroStats.forEach((stat, index) => {
+                        if (statContainers[index]) {
+                            const valueEl = statContainers[index].querySelector('.stat-value-ring');
+                            const labelEl = statContainers[index].querySelector('.stat-label-ring');
+                            if (valueEl) valueEl.textContent = stat.value;
+                            if (labelEl) labelEl.innerHTML = stat.label;
+                        }
+                    });
+                    console.log('✓ Hero stats updated');
+                }
+
+                // Update CTA button
+                const ctaBtn = document.querySelector('.cta-btn-primary');
+                if (ctaBtn && config.cta.primary) {
+                    const span = ctaBtn.querySelector('span:not(.btn-shine)');
+                    if (span) span.textContent = config.cta.primary.text;
+                    ctaBtn.onclick = () => window.open(config.cta.primary.url, '_blank');
+                    console.log('✓ CTA button updated');
+                }
+
+                // Update social links
+                const socialLinks = [
+                    { selector: 'a[aria-label="Instagram"]', url: config.social.instagram },
+                    { selector: 'a[aria-label="YouTube"]', url: config.social.youtube },
+                    { selector: 'a[aria-label="Facebook"]', url: config.social.facebook },
+                    { selector: 'a[aria-label="Email"]', url: `mailto:${config.social.email}` }
+                ];
+
+                socialLinks.forEach(link => {
+                    const el = document.querySelector(link.selector);
+                    if (el && link.url) {
+                        el.href = link.url;
+                    }
+                });
+                console.log('✓ Social links updated');
+
+                // Update stats section
+                if (config.stats && config.stats.length > 0) {
+                    const statsGrid = document.querySelector('.stats-grid-mobile');
+                    if (statsGrid) {
+                        // Clear existing stats
+                        statsGrid.innerHTML = '';
+
+                        // Create stat cards from config
+                        config.stats.forEach(stat => {
+                            const statCard = document.createElement('div');
+                            statCard.className = 'stat-card-mobile';
+
+                            statCard.innerHTML = `
+                                <div class="stat-icon-mobile">
+                                    <i data-lucide="${stat.icon}"></i>
+                                </div>
+                                <div class="stat-number-mobile" data-count="${stat.value}">0</div>
+                                <div class="stat-label-mobile">${stat.label}</div>
+                            `;
+
+                            statsGrid.appendChild(statCard);
+                        });
+
+                        // Re-initialize lucide icons for the new stats
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+
+                        // Re-initialize stats observer for animation
+                        setTimeout(() => {
+                            if (typeof initStatsObserver === 'function') {
+                                initStatsObserver();
+                            }
+                        }, 100);
+
+                        console.log('✓ Stats section updated with', config.stats.length, 'stats');
+                    } else {
+                        console.warn('⚠️ Stats grid element not found');
+                    }
+                } else {
+                    console.warn('⚠️ No stats found in config');
+                }
+
+                console.log('✅ Config loaded successfully!');
+            } catch (error) {
+                console.error('❌ Error loading config:', error);
+                console.log('Config object:', config);
+            }
+        }
+
+        // ================================
+        // INITIALIZE THEME SYSTEM
+        // ================================
+        // Initialize theme on page load - this MUST run before any animations
+        if (typeof ThemeManager !== 'undefined') {
+            ThemeManager.init();
+            console.log('✨ Theme system initialized');
+        } else {
+            console.warn('⚠️ Theme system not found - using default styles');
+        }
+
+        // Populate page from config
+        populateFromConfig();
+
         // Initialize Lucide Icons
         lucide.createIcons();
 
@@ -2323,23 +2549,36 @@
             }, 16);
         }
 
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const valueElement = entry.target.querySelector('.stat-number-mobile');
-                    if (valueElement && !valueElement.classList.contains('counted')) {
-                        valueElement.classList.add('counted');
-                        const target = parseInt(valueElement.getAttribute('data-count'));
-                        const suffix = entry.target.querySelector('.stat-label-mobile').textContent.includes('Km') ? '+' : '';
-                        animateCounter(valueElement, target, suffix);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
+        // Stats Observer - wrapped in function for re-initialization
+        let statsObserver;
 
-        document.querySelectorAll('.stat-card-mobile').forEach(card => {
-            statsObserver.observe(card);
-        });
+        function initStatsObserver() {
+            // Disconnect existing observer if it exists
+            if (statsObserver) {
+                statsObserver.disconnect();
+            }
+
+            statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const valueElement = entry.target.querySelector('.stat-number-mobile');
+                        if (valueElement && !valueElement.classList.contains('counted')) {
+                            valueElement.classList.add('counted');
+                            const target = parseInt(valueElement.getAttribute('data-count'));
+                            const suffix = entry.target.querySelector('.stat-label-mobile').textContent.includes('Km') ? '+' : '';
+                            animateCounter(valueElement, target, suffix);
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.stat-card-mobile').forEach(card => {
+                statsObserver.observe(card);
+            });
+        }
+
+        // Initialize stats observer on page load
+        initStatsObserver();
 
         // ================================
         // FLIPPABLE BIKE CARDS
